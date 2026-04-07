@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { FileJson, ClipboardCopy, Check } from 'lucide-react'
 
 interface ExportButtonProps {
   readonly onExportJson: () => void
@@ -12,7 +13,7 @@ export function ExportButton({ onExportJson, onCopyClipboard, disabled }: Export
   const handleCopy = async () => {
     await onCopyClipboard()
     setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    setTimeout(() => setCopied(false), 3000)
   }
 
   return (
@@ -21,18 +22,23 @@ export function ExportButton({ onExportJson, onCopyClipboard, disabled }: Export
         type="button"
         onClick={onExportJson}
         disabled={disabled}
-        className="rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-50"
+        className="bg-success/90 hover:bg-success flex items-center gap-1.5 rounded-lg px-4 py-2 text-xs font-medium text-white transition-colors active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40"
       >
+        <FileJson size={14} aria-hidden />
         Export JSON
       </button>
       <button
         type="button"
         onClick={handleCopy}
         disabled={disabled}
-        className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
+        className="border-border-subtle bg-surface-raised text-text-secondary hover:border-border-default hover:bg-surface-overlay flex items-center gap-1.5 rounded-lg border px-4 py-2 text-xs font-medium transition-colors active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40"
       >
-        {copied ? '✓ Copied!' : 'Copy to Clipboard'}
+        {copied ? <Check size={14} aria-hidden /> : <ClipboardCopy size={14} aria-hidden />}
+        {copied ? 'Copied!' : 'Copy to Clipboard'}
       </button>
+      <span role="status" aria-live="polite" className="sr-only">
+        {copied ? 'Copied to clipboard' : ''}
+      </span>
     </div>
   )
 }

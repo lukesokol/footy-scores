@@ -21,14 +21,14 @@ function makeUnit(overrides: Partial<OlympicScheduleUnit> = {}): OlympicSchedule
         noc: 'UZB',
         name: 'Uzbekistan',
         order: 1,
-        results: { mark: '1', winnerLoserTie: 'L' },
+        results: { mark: '1-2', winnerLoserTie: 'L' },
       },
       {
         code: 'ESP',
         noc: 'ESP',
         name: 'Spain',
         order: 2,
-        results: { mark: '2', winnerLoserTie: 'W' },
+        results: { mark: '1-2', winnerLoserTie: 'W' },
       },
     ],
     status: 'FINISHED',
@@ -87,7 +87,17 @@ describe('generateEndpoint', () => {
     expect(generateEndpoint(makeUnit({ status: 'SCHEDULED' })).status).toBe('NS')
   })
 
-  it('maps home and away teams by competitor order', () => {
+  it('maps resultStatus "After extra time" to AET', () => {
+    expect(generateEndpoint(makeUnit({ resultStatus: 'After extra time' })).status).toBe('AET')
+  })
+
+  it('maps resultStatus "After penalty shoot-out" to PEN', () => {
+    expect(generateEndpoint(makeUnit({ resultStatus: 'After penalty shoot-out' })).status).toBe(
+      'PEN',
+    )
+  })
+
+  it('maps home and away teams by competitor order with NOC codes', () => {
     const endpoint = generateEndpoint(
       makeUnit({
         competitors: [
@@ -96,14 +106,35 @@ describe('generateEndpoint', () => {
         ],
       }),
     )
-    expect(endpoint.teams).toEqual({ home: 'France', away: 'United States' })
+    expect(endpoint.teams).toEqual({
+      home: 'France',
+      homeNoc: 'FRA',
+      away: 'United States',
+      awayNoc: 'USA',
+    })
   })
 
-  it('parses score from competitor results.mark', () => {
+  it('parses score from H-A format in competitor results.mark', () => {
     const endpoint = generateEndpoint(makeUnit())
     expect(endpoint.score).toEqual({
       home: 1,
       away: 2,
+      halfTime: { home: 0, away: 0 },
+    })
+  })
+
+  it('parses high scores correctly', () => {
+    const endpoint = generateEndpoint(
+      makeUnit({
+        competitors: [
+          { code: 'FRA', noc: 'FRA', name: 'France', order: 1, results: { mark: '6-5' } },
+          { code: 'ESP', noc: 'ESP', name: 'Spain', order: 2, results: { mark: '6-5' } },
+        ],
+      }),
+    )
+    expect(endpoint.score).toEqual({
+      home: 6,
+      away: 5,
       halfTime: { home: 0, away: 0 },
     })
   })

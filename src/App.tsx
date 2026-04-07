@@ -24,7 +24,7 @@ function App() {
   return (
     <Layout matchCount={count}>
       {/* Controls bar */}
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+      <div className="border-border-subtle bg-surface-raised mb-6 flex flex-wrap items-center justify-between gap-4 rounded-xl border p-4">
         <LoadDataButton state={state} onLoad={loadData} onLoadFallback={loadFallback} />
         <StatusIndicator
           state={state}

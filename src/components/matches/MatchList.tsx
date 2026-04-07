@@ -1,3 +1,4 @@
+import { SearchX } from 'lucide-react'
 import type { FootyScoresEndpoint } from '@/types'
 import { MatchCard } from './MatchCard'
 
@@ -10,14 +11,18 @@ interface MatchListProps {
 export function MatchList({ endpoints, selectedEndpoint, onSelectEndpoint }: MatchListProps) {
   if (endpoints.length === 0) {
     return (
-      <div className="rounded-lg border border-dashed border-gray-300 px-6 py-12 text-center">
-        <p className="text-gray-500">No matches found. Adjust your filters or load data.</p>
+      <div className="border-border-default flex flex-col items-center justify-center rounded-xl border border-dashed px-6 py-16 text-center">
+        <SearchX size={32} className="text-text-muted mb-3 opacity-40" aria-hidden />
+        <p className="text-text-secondary text-sm">No matches found</p>
+        <p className="text-text-muted mt-1 text-xs">
+          Adjust your filters or load data to get started.
+        </p>
       </div>
     )
   }
 
   return (
-    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" role="list" aria-label="Match list">
+    <div className="grid gap-3 sm:grid-cols-2" role="list" aria-label="Match list">
       {endpoints.map((ep) => (
         <div role="listitem" key={`${ep.kickoff}-${ep.teams.home}-${ep.teams.away}`}>
           <MatchCard

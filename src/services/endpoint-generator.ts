@@ -1,4 +1,4 @@
-import type { OlympicScheduleUnit, FootyScoresEndpoint, Score } from '@/types'
+import type { OlympicScheduleUnit, FootyScoresEndpoint, Score, MatchStatus } from '@/types'
 
 function getCompetitionName(gender: 'M' | 'W'): string {
   return gender === 'M' ? 'Olympic Football Tournament Men' : 'Olympic Football Tournament Women'
@@ -17,13 +17,17 @@ function getRoundName(phaseName: string): string {
 }
 
 function parseScore(unit: OlympicScheduleUnit): Score | null {
-  const comp1 = unit.competitors[0]
-  const comp2 = unit.competitors[1]
+  const home = unit.competitors.find((c) => c.order === 1) ?? unit.competitors[0]
+  const away = unit.competitors.find((c) => c.order === 2) ?? unit.competitors[1]
 
-  if (!comp1?.results?.mark || !comp2?.results?.mark) return null
+  if (!home?.results?.mark || !away?.results?.mark) return null
 
-  const homeScore = parseInt(comp1.results.mark, 10)
-  const awayScore = parseInt(comp2.results.mark, 10)
+  // Marks are in "H-A" format, e.g. "1-2"
+  const parts = home.results.mark.split('-')
+  if (parts.length !== 2) return null
+
+  const homeScore = parseInt(parts[0] ?? '', 10)
+  const awayScore = parseInt(parts[1] ?? '', 10)
 
   if (isNaN(homeScore) || isNaN(awayScore)) return null
 
@@ -32,6 +36,18 @@ function parseScore(unit: OlympicScheduleUnit): Score | null {
     away: awayScore,
     halfTime: { home: 0, away: 0 },
   }
+}
+
+function mapStatus(unit: OlympicScheduleUnit): MatchStatus {
+  if (unit.status !== 'FINISHED') return 'NS'
+
+  if (unit.resultStatus) {
+    const rs = unit.resultStatus.toLowerCase()
+    if (rs.includes('penalty')) return 'PEN'
+    if (rs.includes('extra')) return 'AET'
+  }
+
+  return 'FT'
 }
 
 function genderSortOrder(gender: 'M' | 'W'): number {
@@ -53,10 +69,12 @@ export function generateEndpoint(unit: OlympicScheduleUnit): FootyScoresEndpoint
       city: unit.locationDescription,
     },
     kickoff: unit.startDate,
-    status: unit.status === 'FINISHED' ? 'FT' : 'NS',
+    status: mapStatus(unit),
     teams: {
       home: homeCompetitor?.name ?? 'TBD',
+      homeNoc: homeCompetitor?.noc ?? '',
       away: awayCompetitor?.name ?? 'TBD',
+      awayNoc: awayCompetitor?.noc ?? '',
     },
     score: parseScore(unit),
     scorers: [],

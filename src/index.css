@@ -1,1 +1,72 @@
 @import 'tailwindcss';
+
+/* ── Light theme (default) ─────────────────────────── */
+@theme {
+  --color-surface: #f8f9fa;
+  --color-surface-raised: #ffffff;
+  --color-surface-overlay: #f0f1f3;
+  --color-border-subtle: #e2e4e9;
+  --color-border-default: #cdd0d5;
+  --color-text-primary: #111113;
+  --color-text-secondary: #4b4c56;
+  --color-text-muted: #6b6c76;
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
+  --color-men: #2563eb;
+  --color-men-bg: #dbeafe;
+  --color-women: #db2777;
+  --color-women-bg: #fce7f3;
+  --color-success: #16a34a;
+  --color-success-bg: #dcfce7;
+  --color-warning: #ca8a04;
+  --color-error: #dc2626;
+}
+
+/* ── Dark theme ────────────────────────────────────── */
+.dark {
+  --color-surface: #111113;
+  --color-surface-raised: #191a1e;
+  --color-surface-overlay: #222327;
+  --color-border-subtle: #2e2f35;
+  --color-border-default: #3a3b42;
+  --color-text-primary: #ededef;
+  --color-text-secondary: #9394a1;
+  --color-text-muted: #75767f;
+  --color-accent: #3b82f6;
+  --color-accent-hover: #60a5fa;
+  --color-men: #3b82f6;
+  --color-men-bg: #1e3a5f;
+  --color-women: #ec4899;
+  --color-women-bg: #5c1d3e;
+  --color-success: #22c55e;
+  --color-success-bg: #14532d;
+  --color-warning: #eab308;
+  --color-error: #ef4444;
+}
+
+/* ── Base ──────────────────────────────────────────── */
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus-visible for all interactive elements */
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Screen-reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
