@@ -76,7 +76,7 @@ export interface OlympicsMatchPeriodSide {
 }
 
 export interface OlympicsMatchPeriod {
-  readonly p_code: string // H1, H2, TOT, EXT, PEN_PHASE
+  readonly p_code: string // H1, H2, TOT, ET-H1, ET-H2, PSO
   readonly home: OlympicsMatchPeriodSide
   readonly away: OlympicsMatchPeriodSide
   readonly extendedPeriods?: readonly {
@@ -106,7 +106,7 @@ export interface OlympicsPlayByPlayAction {
   readonly pbpa_order: number
   readonly pbpa_Action: string // SHOT, PEN, SUBST, YC, RC, FOUL, CRN, OFF, STARTP, ENDP, VAR
   readonly pbpa_ActionAdd?: string
-  readonly pbpa_When: string // e.g. "45' +2", "68'"
+  readonly pbpa_When?: string // e.g. "45' +2", "68'"
   readonly pbpa_Result?: string // GOAL, MISS, SAVE, BLC
   readonly pbpa_Comment?: string
   readonly pbpa_Score?: string

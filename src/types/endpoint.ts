@@ -9,7 +9,7 @@ export interface Venue {
   readonly city: string
 }
 
-export interface HalfTimeScore {
+export interface PeriodScore {
   readonly home: number
   readonly away: number
 }
@@ -17,7 +17,9 @@ export interface HalfTimeScore {
 export interface Score {
   readonly home: number
   readonly away: number
-  readonly halfTime: HalfTimeScore
+  readonly halfTime: PeriodScore
+  readonly extraTime?: PeriodScore
+  readonly penalty?: PeriodScore
 }
 
 export interface Scorer {

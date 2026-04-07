@@ -1,6 +1,7 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { EndpointPreview } from './EndpointPreview'
+import userEvent from '@testing-library/user-event'
+import { MatchModal } from './EndpointPreview'
 import type { FootyScoresEndpoint } from '@/types'
 
 const mockEndpoint: FootyScoresEndpoint = {
@@ -10,25 +11,49 @@ const mockEndpoint: FootyScoresEndpoint = {
   status: 'FT',
   teams: { home: 'Uzbekistan', homeNoc: 'UZB', away: 'Spain', awayNoc: 'ESP' },
   score: { home: 1, away: 2, halfTime: { home: 0, away: 0 } },
-  scorers: [],
+  scorers: [{ team: 'Spain', player: 'Fermín López', minute: 29, type: 'open_play' }],
   lineups: null,
 }
 
-describe('EndpointPreview', () => {
-  it('shows placeholder when no endpoint selected', () => {
-    render(<EndpointPreview endpoint={null} />)
-    expect(screen.getByText(/select a match/i)).toBeInTheDocument()
+// jsdom doesn't support HTMLDialogElement.showModal, so we stub it
+beforeEach(() => {
+  HTMLDialogElement.prototype.showModal = vi.fn()
+  HTMLDialogElement.prototype.close = vi.fn()
+})
+
+describe('MatchModal', () => {
+  it('renders dialog element when no endpoint', () => {
+    render(<MatchModal endpoint={null} onClose={vi.fn()} />)
+    expect(screen.getByRole('dialog', { hidden: true })).toBeInTheDocument()
   })
 
-  it('renders JSON preview for selected endpoint', () => {
-    render(<EndpointPreview endpoint={mockEndpoint} />)
+  it('renders match title when endpoint provided', () => {
+    render(<MatchModal endpoint={mockEndpoint} onClose={vi.fn()} />)
     expect(screen.getByText(/Uzbekistan vs Spain/)).toBeInTheDocument()
-    expect(screen.getByText(/application\/json/)).toBeInTheDocument()
   })
 
-  it('shows formatted JSON in code block', () => {
-    render(<EndpointPreview endpoint={mockEndpoint} />)
-    const code = screen.getByText(/"Olympic Football Tournament Men"/)
-    expect(code).toBeInTheDocument()
+  it('opens on Details tab by default', () => {
+    render(<MatchModal endpoint={mockEndpoint} onClose={vi.fn()} />)
+    expect(screen.getByRole('tab', { name: /details/i, hidden: true })).toHaveAttribute(
+      'aria-selected',
+      'true',
+    )
+    expect(screen.getByText('Full Time')).toBeInTheDocument()
+  })
+
+  it('switches to JSON tab and shows formatted JSON', async () => {
+    const user = userEvent.setup()
+    render(<MatchModal endpoint={mockEndpoint} onClose={vi.fn()} />)
+    await user.click(screen.getByRole('tab', { name: /json/i, hidden: true }))
+    expect(screen.getByRole('tab', { name: /json/i, hidden: true })).toHaveAttribute(
+      'aria-selected',
+      'true',
+    )
+    expect(screen.getByText(/"Olympic Football Tournament Men"/)).toBeInTheDocument()
+  })
+
+  it('shows scorers in details tab', () => {
+    render(<MatchModal endpoint={mockEndpoint} onClose={vi.fn()} />)
+    expect(screen.getByText('Fermín López')).toBeInTheDocument()
   })
 })

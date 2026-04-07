@@ -16,10 +16,12 @@ const mockEndpoint: FootyScoresEndpoint = {
 }
 
 describe('MatchCard', () => {
-  it('renders team names', () => {
+  it('renders team names and NOC codes', () => {
     render(<MatchCard endpoint={mockEndpoint} onSelect={vi.fn()} isSelected={false} />)
     expect(screen.getByText('Uzbekistan')).toBeInTheDocument()
     expect(screen.getByText('Spain')).toBeInTheDocument()
+    expect(screen.getByText('UZB')).toBeInTheDocument()
+    expect(screen.getByText('ESP')).toBeInTheDocument()
   })
 
   it('renders score', () => {

@@ -153,42 +153,72 @@ function parseScoreRich(results: OlympicsMatchResults): Score | null {
   const homeHT = h1Period ? parseInt(h1Period.home.score, 10) : 0
   const awayHT = h1Period ? parseInt(h1Period.away.score, 10) : 0
 
-  return {
+  // Extra-time periods use ET-H1, ET-H2 in the Olympics API
+  const etPeriods = results.periods.filter((p) => p.p_code.startsWith('ET-'))
+  // Penalty shootout period uses PSO in the Olympics API
+  const psoPeriod = results.periods.find((p) => p.p_code === 'PSO')
+
+  // Sum extra-time period scores from each ET half
+  let etHome = 0
+  let etAway = 0
+  for (const etp of etPeriods) {
+    etHome += parseInt(etp.home.periodScore ?? '0', 10) || 0
+    etAway += parseInt(etp.away.periodScore ?? '0', 10) || 0
+  }
+
+  const score: Score = {
     home: homeTotal,
     away: awayTotal,
     halfTime: {
       home: isNaN(homeHT) ? 0 : homeHT,
       away: isNaN(awayHT) ? 0 : awayHT,
     },
+    ...(etPeriods.length > 0
+      ? {
+          extraTime: {
+            home: etHome,
+            away: etAway,
+          },
+        }
+      : {}),
+    ...(psoPeriod
+      ? {
+          penalty: {
+            home: parseInt(psoPeriod.home.periodScore ?? '0', 10) || 0,
+            away: parseInt(psoPeriod.away.periodScore ?? '0', 10) || 0,
+          },
+        }
+      : {}),
   }
+
+  return score
 }
 
 function mapStatusRich(results: OlympicsMatchResults): MatchStatus {
   const statusCode = results.schedule.status.code
   if (statusCode !== 'FINISHED') return 'NS'
 
-  // Check if there are extra-time or penalty periods
-  const hasPenPeriod = results.periods.some((p) => p.p_code === 'PEN_PHASE')
-  if (hasPenPeriod) return 'PEN'
+  // Check if there are penalty shootout or extra-time periods
+  const hasPSO = results.periods.some((p) => p.p_code === 'PSO')
+  if (hasPSO) return 'PEN'
 
-  const hasExtraPeriod = results.periods.some(
-    (p) => p.p_code === 'EXT' || p.p_code === 'EX1' || p.p_code === 'EX2',
-  )
-  if (hasExtraPeriod) return 'AET'
+  const hasET = results.periods.some((p) => p.p_code.startsWith('ET-'))
+  if (hasET) return 'AET'
 
-  // Fallback: check extendedInfos for PERIOD value
-  const periodInfo = results.extendedInfos?.find((ei) => ei.ei_code === 'PERIOD')
-  if (periodInfo) {
-    const val = periodInfo.ei_value.toUpperCase()
-    if (val.includes('PEN')) return 'PEN'
-    if (val.includes('AET') || val.includes('EXT')) return 'AET'
+  // Fallback: check extendedInfos RES_CODE (e.g. "PSO", "AET")
+  const resCode = results.extendedInfos?.find((ei) => ei.ei_code === 'RES_CODE')
+  if (resCode) {
+    const val = resCode.ei_value.toUpperCase()
+    if (val === 'PSO') return 'PEN'
+    if (val === 'AET') return 'AET'
   }
 
   return 'FT'
 }
 
 /** Parse minute from the pbpa_When format, e.g. "45' +2" → 47, "68'" → 68 */
-function parseMinute(when: string): number {
+function parseMinute(when: string | undefined): number {
+  if (!when) return 0
   const match = when.match(/^(\d+)'/)
   const base = match ? parseInt(match[1] ?? '0', 10) : 0
   const addedMatch = when.match(/\+(\d+)/)
@@ -243,6 +273,9 @@ function extractScorers(
   const scorers: Scorer[] = []
 
   for (const period of playByPlay) {
+    // Skip penalty shootout period — those goals are reflected in score.penalty
+    if (period.subcode === 'PSO') continue
+
     for (const action of period.actions) {
       // Goals: SHOT with Result=GOAL, or PEN with Result=GOAL
       const isGoal =

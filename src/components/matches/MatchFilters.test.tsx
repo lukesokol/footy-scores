@@ -7,10 +7,13 @@ describe('MatchFilters', () => {
   const defaultProps = {
     gender: 'all' as const,
     round: 'all' as const,
+    matchDay: 'all' as const,
     searchQuery: '',
     availableRounds: ['Group A', 'Group B', 'Quarter-final'],
+    availableDays: ['2024-07-24', '2024-07-25'],
     onGenderChange: vi.fn(),
     onRoundChange: vi.fn(),
+    onMatchDayChange: vi.fn(),
     onSearchChange: vi.fn(),
   }
 
@@ -27,6 +30,13 @@ describe('MatchFilters', () => {
     expect(select).toBeInTheDocument()
     expect(screen.getByText('All rounds')).toBeInTheDocument()
     expect(screen.getByText('Group A')).toBeInTheDocument()
+  })
+
+  it('renders match day dropdown with options', () => {
+    render(<MatchFilters {...defaultProps} />)
+    const select = screen.getByRole('combobox', { name: /filter by match day/i })
+    expect(select).toBeInTheDocument()
+    expect(screen.getByText('All days')).toBeInTheDocument()
   })
 
   it('renders search input', () => {

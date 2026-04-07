@@ -1,13 +1,16 @@
 import { X } from 'lucide-react'
-import type { GenderFilter, RoundFilter } from '@/hooks'
+import type { GenderFilter, MatchDayFilter, RoundFilter } from '@/hooks'
 
-interface MatchFiltersProps {
+export interface MatchFiltersProps {
   readonly gender: GenderFilter
   readonly round: RoundFilter
+  readonly matchDay: MatchDayFilter
   readonly searchQuery: string
   readonly availableRounds: readonly string[]
+  readonly availableDays: readonly string[]
   readonly onGenderChange: (g: GenderFilter) => void
   readonly onRoundChange: (r: RoundFilter) => void
+  readonly onMatchDayChange: (d: MatchDayFilter) => void
   readonly onSearchChange: (q: string) => void
 }
 
@@ -17,13 +20,25 @@ const genderOptions: { value: GenderFilter; label: string }[] = [
   { value: 'women', label: 'Women' },
 ]
 
+function formatDayOption(dateKey: string): string {
+  const d = new Date(dateKey + 'T12:00:00Z')
+  return d.toLocaleDateString('en-GB', {
+    weekday: 'short',
+    day: 'numeric',
+    month: 'short',
+  })
+}
+
 export function MatchFilters({
   gender,
   round,
+  matchDay,
   searchQuery,
   availableRounds,
+  availableDays,
   onGenderChange,
   onRoundChange,
+  onMatchDayChange,
   onSearchChange,
 }: MatchFiltersProps) {
   return (
@@ -50,29 +65,40 @@ export function MatchFilters({
         ))}
       </fieldset>
 
-      <label className="text-text-secondary flex items-center gap-2 text-sm">
-        <span className="sr-only">Round</span>
-        <select
-          value={round}
-          onChange={(e) => onRoundChange(e.target.value)}
-          className="border-border-subtle bg-surface-raised text-text-secondary focus:border-accent focus:ring-accent rounded-lg border px-3 py-1.5 text-xs focus:ring-1 focus:outline-none"
-          aria-label="Filter by round"
-        >
-          <option value="all">All rounds</option>
-          {availableRounds.map((r) => (
-            <option key={r} value={r}>
-              {r}
-            </option>
-          ))}
-        </select>
-      </label>
+      <select
+        value={matchDay}
+        onChange={(e) => onMatchDayChange(e.target.value)}
+        className="border-border-subtle bg-surface-raised text-text-secondary focus:border-accent focus:ring-accent rounded-lg border px-3 py-1.5 text-xs focus:ring-1 focus:outline-none"
+        aria-label="Filter by match day"
+      >
+        <option value="all">All days</option>
+        {availableDays.map((d) => (
+          <option key={d} value={d}>
+            {formatDayOption(d)}
+          </option>
+        ))}
+      </select>
+
+      <select
+        value={round}
+        onChange={(e) => onRoundChange(e.target.value)}
+        className="border-border-subtle bg-surface-raised text-text-secondary focus:border-accent focus:ring-accent rounded-lg border px-3 py-1.5 text-xs focus:ring-1 focus:outline-none"
+        aria-label="Filter by round"
+      >
+        <option value="all">All rounds</option>
+        {availableRounds.map((r) => (
+          <option key={r} value={r}>
+            {r}
+          </option>
+        ))}
+      </select>
 
       <div className="relative">
         <input
           type="search"
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
-          placeholder="Search teams, venues, rounds…"
+          placeholder="Search teams, venues…"
           className="border-border-subtle bg-surface-raised text-text-primary placeholder-text-muted focus:border-accent focus:ring-accent rounded-lg border px-3 py-1.5 pr-7 text-xs focus:ring-1 focus:outline-none"
           aria-label="Search matches"
         />

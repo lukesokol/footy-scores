@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import {
   useMatchDetails,
   useEndpointGeneratorFromDetails,
@@ -6,7 +6,7 @@ import {
   useMatchFilters,
 } from '@/hooks'
 import { Layout } from '@/components/layout'
-import { MatchList, MatchFilters, EndpointPreview } from '@/components/matches'
+import { MatchList, MatchModal, MatchFilters } from '@/components/matches'
 import { LoadDataButton, ExportButton, StatusIndicator } from '@/components/controls'
 import type { FootyScoresEndpoint } from '@/types'
 
@@ -16,15 +16,19 @@ function App() {
   const {
     gender,
     round,
+    matchDay,
     searchQuery,
     filtered,
     availableRounds,
+    availableDays,
     setGender,
     setRound,
+    setMatchDay,
     setSearchQuery,
   } = useMatchFilters(endpoints)
   const { exportAsJson, copyToClipboard } = useExport(filtered)
   const [selectedEndpoint, setSelectedEndpoint] = useState<FootyScoresEndpoint | null>(null)
+  const clearSelected = useCallback(() => setSelectedEndpoint(null), [])
 
   return (
     <Layout matchCount={count}>
@@ -50,26 +54,27 @@ function App() {
           <MatchFilters
             gender={gender}
             round={round}
+            matchDay={matchDay}
             searchQuery={searchQuery}
             availableRounds={availableRounds}
+            availableDays={availableDays}
             onGenderChange={setGender}
             onRoundChange={setRound}
+            onMatchDayChange={setMatchDay}
             onSearchChange={setSearchQuery}
           />
         </div>
       )}
 
-      {/* Content: match grid + preview */}
-      <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
-        <MatchList
-          endpoints={filtered}
-          selectedEndpoint={selectedEndpoint}
-          onSelectEndpoint={setSelectedEndpoint}
-        />
-        <div className="lg:sticky lg:top-6 lg:self-start">
-          <EndpointPreview endpoint={selectedEndpoint} />
-        </div>
-      </div>
+      {/* Match grid (full width) */}
+      <MatchList
+        endpoints={filtered}
+        selectedEndpoint={selectedEndpoint}
+        onSelectEndpoint={setSelectedEndpoint}
+      />
+
+      {/* Match detail + JSON modal */}
+      <MatchModal endpoint={selectedEndpoint} onClose={clearSelected} />
     </Layout>
   )
 }

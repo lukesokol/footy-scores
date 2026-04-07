@@ -3,7 +3,7 @@ export type {
   Competition,
   Venue,
   Score,
-  HalfTimeScore,
+  PeriodScore,
   Scorer,
   Player,
   LineupEntry,

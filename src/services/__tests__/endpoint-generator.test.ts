@@ -570,6 +570,57 @@ describe('generateEndpointFromDetail', () => {
       )
       expect(endpoint.score).toBeNull()
     })
+
+    it('includes extraTime from ET-H1/ET-H2 periods', () => {
+      const periods = [
+        ...makePeriods(),
+        {
+          p_code: 'ET-H1',
+          home: { score: '1', periodScore: '1' },
+          away: { score: '0', periodScore: '0' },
+        },
+        {
+          p_code: 'ET-H2',
+          home: { score: '1', periodScore: '0' },
+          away: { score: '0', periodScore: '0' },
+        },
+      ]
+      const endpoint = generateEndpointFromDetail(
+        makeMatchDetail({ detail: makeDetailResponse({ periods }) }),
+      )
+      expect(endpoint.score?.extraTime).toEqual({ home: 1, away: 0 })
+    })
+
+    it('includes penalty from PSO period', () => {
+      const periods = [
+        ...makePeriods(),
+        {
+          p_code: 'ET-H1',
+          home: { score: '0', periodScore: '0' },
+          away: { score: '0', periodScore: '0' },
+        },
+        {
+          p_code: 'ET-H2',
+          home: { score: '0', periodScore: '0' },
+          away: { score: '0', periodScore: '0' },
+        },
+        {
+          p_code: 'PSO',
+          home: { score: '0', periodScore: '4' },
+          away: { score: '0', periodScore: '2' },
+        },
+      ]
+      const endpoint = generateEndpointFromDetail(
+        makeMatchDetail({ detail: makeDetailResponse({ periods }) }),
+      )
+      expect(endpoint.score?.penalty).toEqual({ home: 4, away: 2 })
+    })
+
+    it('does not include extraTime or penalty for regular FT match', () => {
+      const endpoint = generateEndpointFromDetail(makeMatchDetail())
+      expect(endpoint.score?.extraTime).toBeUndefined()
+      expect(endpoint.score?.penalty).toBeUndefined()
+    })
   })
 
   describe('status mapping', () => {
@@ -585,10 +636,24 @@ describe('generateEndpointFromDetail', () => {
       expect(endpoint.status).toBe('NS')
     })
 
-    it('detects PEN from PEN_PHASE period', () => {
+    it('detects PEN from PSO period', () => {
       const periods = [
         ...makePeriods(),
-        { p_code: 'PEN_PHASE', home: { score: '4' }, away: { score: '2' } },
+        {
+          p_code: 'ET-H1',
+          home: { score: '0', periodScore: '0' },
+          away: { score: '0', periodScore: '0' },
+        },
+        {
+          p_code: 'ET-H2',
+          home: { score: '0', periodScore: '0' },
+          away: { score: '0', periodScore: '0' },
+        },
+        {
+          p_code: 'PSO',
+          home: { score: '0', periodScore: '4' },
+          away: { score: '0', periodScore: '2' },
+        },
       ]
       const endpoint = generateEndpointFromDetail(
         makeMatchDetail({ detail: makeDetailResponse({ periods }) }),
@@ -596,10 +661,19 @@ describe('generateEndpointFromDetail', () => {
       expect(endpoint.status).toBe('PEN')
     })
 
-    it('detects AET from EXT period', () => {
+    it('detects AET from ET-H1/ET-H2 periods', () => {
       const periods = [
         ...makePeriods(),
-        { p_code: 'EXT', home: { score: '1' }, away: { score: '0' } },
+        {
+          p_code: 'ET-H1',
+          home: { score: '1', periodScore: '1' },
+          away: { score: '0', periodScore: '0' },
+        },
+        {
+          p_code: 'ET-H2',
+          home: { score: '1', periodScore: '0' },
+          away: { score: '0', periodScore: '0' },
+        },
       ]
       const endpoint = generateEndpointFromDetail(
         makeMatchDetail({ detail: makeDetailResponse({ periods }) }),

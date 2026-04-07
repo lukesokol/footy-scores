@@ -6,8 +6,10 @@
 const nocToIso: Record<string, string> = {
   GER: 'DE',
   GIN: 'GN',
+  GUI: 'GN',
   GBR: 'GB',
   NGA: 'NG',
+  NGR: 'NG',
   PAR: 'PY',
   RSA: 'ZA',
   SUI: 'CH',
@@ -34,4 +36,12 @@ export function nocToFlag(noc: string): string {
   const iso = nocToIso[noc] ?? noc.slice(0, 2)
   const codePoints = [...iso.toUpperCase()].map((c) => 0x1f1e6 + c.charCodeAt(0) - 65)
   return String.fromCodePoint(...codePoints)
+}
+
+/**
+ * Return the local path to a downloaded flag webp image.
+ * Run `node scripts/download-flags.mjs` to populate public/flags/.
+ */
+export function flagImageUrl(noc: string): string {
+  return `/flags/${noc}.webp`
 }
