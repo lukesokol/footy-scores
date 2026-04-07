@@ -78,3 +78,4 @@ pnpm typecheck    # TypeScript type checking
 - Requirements: `references/readme.md`
 - Endpoint structure: `references/example.json`
 - Project plan: `docs/PLAN.md`
+- Future roadmap: `docs/ROADMAP.md`
