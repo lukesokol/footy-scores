@@ -13,6 +13,11 @@ export default defineConfig({
   },
   server: {
     proxy: {
+      '/api/olympics-data': {
+        target: 'https://stacy.olympics.com/OG2024/data',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/olympics-data/, ''),
+      },
       '/api/olympics': {
         target: 'https://sph-s-api.olympics.com',
         changeOrigin: true,

@@ -1,2 +1,5 @@
 export { fetchOlympicSchedule, loadFallbackSchedule } from './olympics-schedule'
 export { generateEndpoint, generateAllEndpoints } from './endpoint-generator'
+export { generateEndpointFromDetail, generateAllEndpointsFromDetails } from './endpoint-generator'
+export { fetchAllMatchDetails } from './olympics-api'
+export type { MatchDetailWithMeta } from './olympics-api'

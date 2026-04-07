@@ -6,7 +6,7 @@ import { LoadDataButton } from './LoadDataButton'
 describe('LoadDataButton', () => {
   it('renders fetch and static buttons', () => {
     render(<LoadDataButton state="idle" onLoad={vi.fn()} onLoadFallback={vi.fn()} />)
-    expect(screen.getByText('Fetch Schedule')).toBeInTheDocument()
+    expect(screen.getByText('Fetch Match Data')).toBeInTheDocument()
     expect(screen.getByText('Use Static Data')).toBeInTheDocument()
   })
 
@@ -25,7 +25,7 @@ describe('LoadDataButton', () => {
     const user = userEvent.setup()
     const onLoad = vi.fn()
     render(<LoadDataButton state="idle" onLoad={onLoad} onLoadFallback={vi.fn()} />)
-    await user.click(screen.getByText('Fetch Schedule'))
+    await user.click(screen.getByText('Fetch Match Data'))
     expect(onLoad).toHaveBeenCalledOnce()
   })
 

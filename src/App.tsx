@@ -1,13 +1,18 @@
 import { useState } from 'react'
-import { useOlympicSchedule, useEndpointGenerator, useExport, useMatchFilters } from '@/hooks'
+import {
+  useMatchDetails,
+  useEndpointGeneratorFromDetails,
+  useExport,
+  useMatchFilters,
+} from '@/hooks'
 import { Layout } from '@/components/layout'
 import { MatchList, MatchFilters, EndpointPreview } from '@/components/matches'
 import { LoadDataButton, ExportButton, StatusIndicator } from '@/components/controls'
 import type { FootyScoresEndpoint } from '@/types'
 
 function App() {
-  const { units, state, error, loadData, loadFallback } = useOlympicSchedule()
-  const { endpoints, count } = useEndpointGenerator(units)
+  const { matches, state, error, loadData } = useMatchDetails()
+  const { endpoints, count } = useEndpointGeneratorFromDetails(matches)
   const {
     gender,
     round,
@@ -25,7 +30,7 @@ function App() {
     <Layout matchCount={count}>
       {/* Controls bar */}
       <div className="border-border-subtle bg-surface-raised mb-6 flex flex-wrap items-center justify-between gap-4 rounded-xl border p-4">
-        <LoadDataButton state={state} onLoad={loadData} onLoadFallback={loadFallback} />
+        <LoadDataButton state={state} onLoad={loadData} />
         <StatusIndicator
           state={state}
           error={error}

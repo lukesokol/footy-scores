@@ -1,5 +1,6 @@
 export { useOlympicSchedule } from './useOlympicSchedule'
-export { useEndpointGenerator } from './useEndpointGenerator'
+export { useEndpointGenerator, useEndpointGeneratorFromDetails } from './useEndpointGenerator'
+export { useMatchDetails } from './useMatchDetails'
 export { useExport } from './useExport'
 export { useMatchFilters } from './useMatchFilters'
 export { useTheme } from './useTheme'
