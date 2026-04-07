@@ -21,53 +21,56 @@ function formatKickoff(kickoff: string): string {
 export function MatchCard({ endpoint, onSelect, isSelected }: MatchCardProps) {
   const isMen = endpoint.competition.name.includes('Men')
   const genderBadge = isMen ? 'Men' : 'Women'
-  const genderColor = isMen ? 'bg-blue-100 text-blue-800' : 'bg-pink-100 text-pink-800'
+  const genderColor = isMen ? 'bg-men-bg text-men' : 'bg-women-bg text-women'
 
   return (
     <button
       type="button"
       onClick={() => onSelect(endpoint)}
       aria-pressed={isSelected}
-      className={`w-full rounded-lg border p-4 text-left transition-colors hover:border-blue-300 hover:bg-blue-50 ${
-        isSelected ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-200' : 'border-gray-200 bg-white'
+      className={`group w-full rounded-xl border p-4 text-left transition-all duration-150 ${
+        isSelected
+          ? 'border-accent bg-accent/5 ring-accent/30 ring-1'
+          : 'border-border-subtle bg-surface-raised hover:border-border-default hover:bg-surface-overlay'
       }`}
     >
-      <div className="mb-2 flex items-center justify-between">
-        <span className={`rounded px-2 py-0.5 text-xs font-medium ${genderColor}`}>
+      <div className="mb-3 flex items-center justify-between">
+        <span className={`rounded-md px-2 py-0.5 text-xs font-medium ${genderColor}`}>
           {genderBadge}
         </span>
-        <span className="text-xs text-gray-500">{endpoint.competition.round}</span>
+        <span className="text-text-muted text-xs">{endpoint.competition.round}</span>
       </div>
 
-      <div className="mb-2 flex items-center justify-between gap-2">
-        <span className="truncate font-semibold text-gray-900">{endpoint.teams.home}</span>
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <span className="text-text-primary truncate text-sm font-medium">
+          {endpoint.teams.home}
+        </span>
         {endpoint.score ? (
-          <span className="shrink-0 rounded bg-gray-900 px-2 py-0.5 text-sm font-bold text-white">
+          <span className="bg-surface-overlay text-text-primary shrink-0 rounded-md px-2.5 py-1 font-mono text-sm font-semibold">
             {endpoint.score.home} – {endpoint.score.away}
           </span>
         ) : (
-          <span className="shrink-0 text-sm text-gray-400">vs</span>
+          <span className="text-text-muted shrink-0 text-xs">vs</span>
         )}
-        <span className="truncate text-right font-semibold text-gray-900">
+        <span className="text-text-primary truncate text-right text-sm font-medium">
           {endpoint.teams.away}
         </span>
       </div>
 
-      <div className="flex items-center justify-between text-xs text-gray-500">
+      <div className="text-text-muted flex items-center justify-between text-xs">
         <span>{formatKickoff(endpoint.kickoff)}</span>
-        <span>{endpoint.venue.city}</span>
-      </div>
-
-      <div className="mt-1 text-right">
-        <span
-          className={`inline-block rounded px-1.5 py-0.5 text-xs font-medium ${
-            endpoint.status === 'FT'
-              ? 'bg-green-100 text-green-800'
-              : 'bg-yellow-100 text-yellow-800'
-          }`}
-        >
-          {endpoint.status}
-        </span>
+        <div className="flex items-center gap-2">
+          <span>{endpoint.venue.city}</span>
+          <span
+            className={`inline-block rounded-full px-1.5 py-0.5 text-[10px] font-semibold tracking-wide uppercase ${
+              endpoint.status === 'FT'
+                ? 'bg-success-bg text-success'
+                : 'bg-surface-overlay text-warning'
+            }`}
+          >
+            {endpoint.status}
+          </span>
+        </div>
       </div>
     </button>
   )

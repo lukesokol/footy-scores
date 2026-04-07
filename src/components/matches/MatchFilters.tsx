@@ -27,14 +27,19 @@ export function MatchFilters({
 }: MatchFiltersProps) {
   return (
     <div className="flex flex-wrap items-center gap-3">
-      <fieldset className="flex gap-1 rounded-lg border border-gray-200 p-1" aria-label="Gender">
+      <fieldset
+        className="border-border-subtle bg-surface-raised flex gap-0.5 rounded-lg border p-0.5"
+        aria-label="Gender"
+      >
         {genderOptions.map((opt) => (
           <button
             key={opt.value}
             type="button"
             onClick={() => onGenderChange(opt.value)}
-            className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
-              gender === opt.value ? 'bg-gray-900 text-white' : 'text-gray-600 hover:bg-gray-100'
+            className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
+              gender === opt.value
+                ? 'bg-surface-overlay text-text-primary shadow-sm'
+                : 'text-text-muted hover:text-text-secondary'
             }`}
             aria-pressed={gender === opt.value}
           >
@@ -43,12 +48,12 @@ export function MatchFilters({
         ))}
       </fieldset>
 
-      <label className="flex items-center gap-2 text-sm text-gray-700">
+      <label className="text-text-secondary flex items-center gap-2 text-sm">
         <span className="sr-only">Round</span>
         <select
           value={round}
           onChange={(e) => onRoundChange(e.target.value)}
-          className="rounded-md border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
+          className="border-border-subtle bg-surface-raised text-text-secondary focus:border-accent focus:ring-accent rounded-lg border px-3 py-1.5 text-xs focus:ring-1 focus:outline-none"
           aria-label="Filter by round"
         >
           <option value="all">All rounds</option>
@@ -65,7 +70,7 @@ export function MatchFilters({
         value={searchQuery}
         onChange={(e) => onSearchChange(e.target.value)}
         placeholder="Search teams, venues…"
-        className="rounded-md border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-700 placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
+        className="border-border-subtle bg-surface-raised text-text-primary placeholder-text-muted focus:border-accent focus:ring-accent rounded-lg border px-3 py-1.5 text-xs focus:ring-1 focus:outline-none"
         aria-label="Search matches"
       />
     </div>

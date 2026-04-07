@@ -23,12 +23,12 @@ pnpm dev
 
 The `main` branch should have these protection rules enabled in **Settings → Branches → Add rule**:
 
-| Rule | Purpose |
-| ---- | ------- |
-| Require a pull request before merging | Enforces code review workflow |
-| Require status checks to pass (lint-and-typecheck, unit-tests, build) | Blocks broken code from reaching main |
-| Dismiss stale pull request approvals | Re-review required if code changes after approval |
-| Require branches to be up to date | Ensures PR is tested against latest main |
+| Rule                                                                  | Purpose                                           |
+| --------------------------------------------------------------------- | ------------------------------------------------- |
+| Require a pull request before merging                                 | Enforces code review workflow                     |
+| Require status checks to pass (lint-and-typecheck, unit-tests, build) | Blocks broken code from reaching main             |
+| Dismiss stale pull request approvals                                  | Re-review required if code changes after approval |
+| Require branches to be up to date                                     | Ensures PR is tested against latest main          |
 
 These rules are configured in the GitHub UI, not in repository files.
 
@@ -87,17 +87,17 @@ When using Copilot in VS Code, these files ensure AI suggestions align with proj
 
 ### Available Agents
 
-| Agent | Purpose | Tools |
-| ----- | ------- | ----- |
-| `@reviewer` | Read-only code review for correctness and conventions | read, search |
-| `@test-writer` | Write and update tests for components and services | read, search, edit |
-| `@designer` | Translate Figma designs into React components (requires MCP) | read, search, edit, web |
-| `@ui-validator` | Compare rendered UI against Figma design specs (read-only) | read, search, web |
+| Agent           | Purpose                                                      | Tools                   |
+| --------------- | ------------------------------------------------------------ | ----------------------- |
+| `@reviewer`     | Read-only code review for correctness and conventions        | read, search            |
+| `@test-writer`  | Write and update tests for components and services           | read, search, edit      |
+| `@designer`     | Translate Figma designs into React components (requires MCP) | read, search, edit, web |
+| `@ui-validator` | Compare rendered UI against Figma design specs (read-only)   | read, search, web       |
 
 ### Available Prompts
 
-| Prompt | Purpose |
-| ------ | ------- |
-| `/new-component` | Scaffold a component with types, styles, and test |
-| `/generate-endpoint-test` | Generate endpoint generation test cases |
-| `/enhance-component` | Improve component styling, animations, or responsiveness |
+| Prompt                    | Purpose                                                  |
+| ------------------------- | -------------------------------------------------------- |
+| `/new-component`          | Scaffold a component with types, styles, and test        |
+| `/generate-endpoint-test` | Generate endpoint generation test cases                  |
+| `/enhance-component`      | Improve component styling, animations, or responsiveness |

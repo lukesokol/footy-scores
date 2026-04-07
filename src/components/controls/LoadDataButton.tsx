@@ -15,7 +15,7 @@ export function LoadDataButton({ state, onLoad, onLoadFallback }: LoadDataButton
         type="button"
         onClick={onLoad}
         disabled={isLoading}
-        className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+        className="bg-accent hover:bg-accent-hover rounded-lg px-4 py-2 text-xs font-medium text-white transition-colors disabled:cursor-not-allowed disabled:opacity-40"
       >
         {isLoading ? 'Loading…' : 'Fetch Schedule'}
       </button>
@@ -23,7 +23,7 @@ export function LoadDataButton({ state, onLoad, onLoadFallback }: LoadDataButton
         type="button"
         onClick={onLoadFallback}
         disabled={isLoading}
-        className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
+        className="border-border-subtle bg-surface-raised text-text-secondary hover:border-border-default hover:bg-surface-overlay rounded-lg border px-4 py-2 text-xs font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40"
       >
         Use Static Data
       </button>

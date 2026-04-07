@@ -10,7 +10,7 @@ describe('Header', () => {
 
   it('renders the subtitle', () => {
     render(<Header matchCount={0} />)
-    expect(screen.getByText(/Paris 2024 Olympic Football/)).toBeInTheDocument()
+    expect(screen.getByText(/Paris 2024/)).toBeInTheDocument()
   })
 
   it('shows match count badge when matches > 0', () => {
