@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Project Plan
+    url: https://github.com/user/footy-scores/blob/main/docs/PLAN.md
+    about: Read the project plan and architecture overview
