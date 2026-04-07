@@ -49,14 +49,18 @@ export interface Lineups {
 
 export interface Teams {
   readonly home: string
+  readonly homeNoc: string
   readonly away: string
+  readonly awayNoc: string
 }
+
+export type MatchStatus = 'FT' | 'AET' | 'PEN' | 'NS'
 
 export interface FootyScoresEndpoint {
   readonly competition: Competition
   readonly venue: Venue
   readonly kickoff: string
-  readonly status: string
+  readonly status: MatchStatus
   readonly teams: Teams
   readonly score: Score | null
   readonly scorers: readonly Scorer[]

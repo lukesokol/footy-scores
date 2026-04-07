@@ -9,6 +9,7 @@ export type {
   LineupEntry,
   Lineups,
   Teams,
+  MatchStatus,
 } from './endpoint'
 export type {
   OlympicScheduleUnit,
