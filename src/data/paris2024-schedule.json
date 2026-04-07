@@ -1,0 +1,1749 @@
+[
+  {
+    "startDate": "2024-07-24T15:00:00+02:00",
+    "endDate": "2024-07-24T17:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPB-001",
+    "unitName": "Men's Group B - Match 1",
+    "phaseName": "Group B",
+    "venueDescription": "Stade Geoffroy-Guichard",
+    "locationDescription": "Saint-Étienne",
+    "competitors": [
+      {
+        "code": "ARG",
+        "noc": "ARG",
+        "name": "Argentina",
+        "order": 1,
+        "results": { "mark": "1-2", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "MAR",
+        "noc": "MAR",
+        "name": "Morocco",
+        "order": 2,
+        "results": { "mark": "1-2", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-24T15:00:00+02:00",
+    "endDate": "2024-07-24T17:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPC-001",
+    "unitName": "Men's Group C - Match 1",
+    "phaseName": "Group C",
+    "venueDescription": "Parc des Princes",
+    "locationDescription": "Paris",
+    "competitors": [
+      {
+        "code": "UZB",
+        "noc": "UZB",
+        "name": "Uzbekistan",
+        "order": 1,
+        "results": { "mark": "1-2", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "ESP",
+        "noc": "ESP",
+        "name": "Spain",
+        "order": 2,
+        "results": { "mark": "1-2", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-24T17:00:00+02:00",
+    "endDate": "2024-07-24T19:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPA-001",
+    "unitName": "Men's Group A - Match 1",
+    "phaseName": "Group A",
+    "venueDescription": "Stade de Nice",
+    "locationDescription": "Nice",
+    "competitors": [
+      {
+        "code": "GIN",
+        "noc": "GIN",
+        "name": "Guinea",
+        "order": 1,
+        "results": { "mark": "1-2", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "NZL",
+        "noc": "NZL",
+        "name": "New Zealand",
+        "order": 2,
+        "results": { "mark": "1-2", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-24T17:00:00+02:00",
+    "endDate": "2024-07-24T19:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPC-002",
+    "unitName": "Men's Group C - Match 2",
+    "phaseName": "Group C",
+    "venueDescription": "Stade de la Beaujoire",
+    "locationDescription": "Nantes",
+    "competitors": [
+      {
+        "code": "EGY",
+        "noc": "EGY",
+        "name": "Egypt",
+        "order": 1,
+        "results": { "mark": "0-0", "winnerLoserTie": "T" }
+      },
+      {
+        "code": "DOM",
+        "noc": "DOM",
+        "name": "Dominican Republic",
+        "order": 2,
+        "results": { "mark": "0-0", "winnerLoserTie": "T" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-24T19:00:00+02:00",
+    "endDate": "2024-07-24T21:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPB-002",
+    "unitName": "Men's Group B - Match 2",
+    "phaseName": "Group B",
+    "venueDescription": "Stade de Lyon",
+    "locationDescription": "Décines-Charpieu",
+    "competitors": [
+      {
+        "code": "IRQ",
+        "noc": "IRQ",
+        "name": "Iraq",
+        "order": 1,
+        "results": { "mark": "2-1", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "UKR",
+        "noc": "UKR",
+        "name": "Ukraine",
+        "order": 2,
+        "results": { "mark": "2-1", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-24T19:00:00+02:00",
+    "endDate": "2024-07-24T21:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPD-001",
+    "unitName": "Men's Group D - Match 1",
+    "phaseName": "Group D",
+    "venueDescription": "Stade de Bordeaux",
+    "locationDescription": "Bordeaux",
+    "competitors": [
+      {
+        "code": "JPN",
+        "noc": "JPN",
+        "name": "Japan",
+        "order": 1,
+        "results": { "mark": "5-0", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "PAR",
+        "noc": "PAR",
+        "name": "Paraguay",
+        "order": 2,
+        "results": { "mark": "5-0", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-24T21:00:00+02:00",
+    "endDate": "2024-07-24T23:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPA-002",
+    "unitName": "Men's Group A - Match 2",
+    "phaseName": "Group A",
+    "venueDescription": "Stade de Marseille",
+    "locationDescription": "Marseille",
+    "competitors": [
+      {
+        "code": "FRA",
+        "noc": "FRA",
+        "name": "France",
+        "order": 1,
+        "results": { "mark": "3-0", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "USA",
+        "noc": "USA",
+        "name": "United States",
+        "order": 2,
+        "results": { "mark": "3-0", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-24T21:00:00+02:00",
+    "endDate": "2024-07-24T23:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPD-002",
+    "unitName": "Men's Group D - Match 2",
+    "phaseName": "Group D",
+    "venueDescription": "Parc des Princes",
+    "locationDescription": "Paris",
+    "competitors": [
+      {
+        "code": "MLI",
+        "noc": "MLI",
+        "name": "Mali",
+        "order": 1,
+        "results": { "mark": "1-1", "winnerLoserTie": "T" }
+      },
+      {
+        "code": "ISR",
+        "noc": "ISR",
+        "name": "Israel",
+        "order": 2,
+        "results": { "mark": "1-1", "winnerLoserTie": "T" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-25T17:00:00+02:00",
+    "endDate": "2024-07-25T19:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPA-001",
+    "unitName": "Women's Group A - Match 1",
+    "phaseName": "Group A",
+    "venueDescription": "Stade Geoffroy-Guichard",
+    "locationDescription": "Saint-Étienne",
+    "competitors": [
+      {
+        "code": "CAN",
+        "noc": "CAN",
+        "name": "Canada",
+        "order": 1,
+        "results": { "mark": "2-1", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "NZL",
+        "noc": "NZL",
+        "name": "New Zealand",
+        "order": 2,
+        "results": { "mark": "2-1", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-25T17:00:00+02:00",
+    "endDate": "2024-07-25T19:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPC-001",
+    "unitName": "Women's Group C - Match 1",
+    "phaseName": "Group C",
+    "venueDescription": "Stade de la Beaujoire",
+    "locationDescription": "Nantes",
+    "competitors": [
+      {
+        "code": "ESP",
+        "noc": "ESP",
+        "name": "Spain",
+        "order": 1,
+        "results": { "mark": "2-1", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "JPN",
+        "noc": "JPN",
+        "name": "Japan",
+        "order": 2,
+        "results": { "mark": "2-1", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-25T19:00:00+02:00",
+    "endDate": "2024-07-25T21:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPB-001",
+    "unitName": "Women's Group B - Match 1",
+    "phaseName": "Group B",
+    "venueDescription": "Stade de Marseille",
+    "locationDescription": "Marseille",
+    "competitors": [
+      {
+        "code": "GER",
+        "noc": "GER",
+        "name": "Germany",
+        "order": 1,
+        "results": { "mark": "3-0", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "AUS",
+        "noc": "AUS",
+        "name": "Australia",
+        "order": 2,
+        "results": { "mark": "3-0", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-25T19:00:00+02:00",
+    "endDate": "2024-07-25T21:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPC-002",
+    "unitName": "Women's Group C - Match 2",
+    "phaseName": "Group C",
+    "venueDescription": "Stade de Bordeaux",
+    "locationDescription": "Bordeaux",
+    "competitors": [
+      {
+        "code": "NGA",
+        "noc": "NGA",
+        "name": "Nigeria",
+        "order": 1,
+        "results": { "mark": "0-1", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "BRA",
+        "noc": "BRA",
+        "name": "Brazil",
+        "order": 2,
+        "results": { "mark": "0-1", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-25T21:00:00+02:00",
+    "endDate": "2024-07-25T23:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPA-002",
+    "unitName": "Women's Group A - Match 2",
+    "phaseName": "Group A",
+    "venueDescription": "Stade de Lyon",
+    "locationDescription": "Décines-Charpieu",
+    "competitors": [
+      {
+        "code": "FRA",
+        "noc": "FRA",
+        "name": "France",
+        "order": 1,
+        "results": { "mark": "3-2", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "COL",
+        "noc": "COL",
+        "name": "Colombia",
+        "order": 2,
+        "results": { "mark": "3-2", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-25T21:00:00+02:00",
+    "endDate": "2024-07-25T23:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPB-002",
+    "unitName": "Women's Group B - Match 2",
+    "phaseName": "Group B",
+    "venueDescription": "Stade de Nice",
+    "locationDescription": "Nice",
+    "competitors": [
+      {
+        "code": "USA",
+        "noc": "USA",
+        "name": "United States",
+        "order": 1,
+        "results": { "mark": "3-0", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "ZAM",
+        "noc": "ZAM",
+        "name": "Zambia",
+        "order": 2,
+        "results": { "mark": "3-0", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-27T15:00:00+02:00",
+    "endDate": "2024-07-27T17:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPB-003",
+    "unitName": "Men's Group B - Match 3",
+    "phaseName": "Group B",
+    "venueDescription": "Stade de Lyon",
+    "locationDescription": "Décines-Charpieu",
+    "competitors": [
+      {
+        "code": "ARG",
+        "noc": "ARG",
+        "name": "Argentina",
+        "order": 1,
+        "results": { "mark": "3-1", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "IRQ",
+        "noc": "IRQ",
+        "name": "Iraq",
+        "order": 2,
+        "results": { "mark": "3-1", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-27T15:00:00+02:00",
+    "endDate": "2024-07-27T17:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPC-003",
+    "unitName": "Men's Group C - Match 3",
+    "phaseName": "Group C",
+    "venueDescription": "Stade de Bordeaux",
+    "locationDescription": "Bordeaux",
+    "competitors": [
+      {
+        "code": "DOM",
+        "noc": "DOM",
+        "name": "Dominican Republic",
+        "order": 1,
+        "results": { "mark": "1-3", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "ESP",
+        "noc": "ESP",
+        "name": "Spain",
+        "order": 2,
+        "results": { "mark": "1-3", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-27T17:00:00+02:00",
+    "endDate": "2024-07-27T19:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPB-004",
+    "unitName": "Men's Group B - Match 4",
+    "phaseName": "Group B",
+    "venueDescription": "Stade Geoffroy-Guichard",
+    "locationDescription": "Saint-Étienne",
+    "competitors": [
+      {
+        "code": "UKR",
+        "noc": "UKR",
+        "name": "Ukraine",
+        "order": 1,
+        "results": { "mark": "2-1", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "MAR",
+        "noc": "MAR",
+        "name": "Morocco",
+        "order": 2,
+        "results": { "mark": "2-1", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-27T17:00:00+02:00",
+    "endDate": "2024-07-27T19:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPC-004",
+    "unitName": "Men's Group C - Match 4",
+    "phaseName": "Group C",
+    "venueDescription": "Stade de la Beaujoire",
+    "locationDescription": "Nantes",
+    "competitors": [
+      {
+        "code": "UZB",
+        "noc": "UZB",
+        "name": "Uzbekistan",
+        "order": 1,
+        "results": { "mark": "0-1", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "EGY",
+        "noc": "EGY",
+        "name": "Egypt",
+        "order": 2,
+        "results": { "mark": "0-1", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-27T19:00:00+02:00",
+    "endDate": "2024-07-27T21:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPA-003",
+    "unitName": "Men's Group A - Match 3",
+    "phaseName": "Group A",
+    "venueDescription": "Stade de Marseille",
+    "locationDescription": "Marseille",
+    "competitors": [
+      {
+        "code": "NZL",
+        "noc": "NZL",
+        "name": "New Zealand",
+        "order": 1,
+        "results": { "mark": "1-4", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "USA",
+        "noc": "USA",
+        "name": "United States",
+        "order": 2,
+        "results": { "mark": "1-4", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-27T19:00:00+02:00",
+    "endDate": "2024-07-27T21:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPD-003",
+    "unitName": "Men's Group D - Match 3",
+    "phaseName": "Group D",
+    "venueDescription": "Parc des Princes",
+    "locationDescription": "Paris",
+    "competitors": [
+      {
+        "code": "ISR",
+        "noc": "ISR",
+        "name": "Israel",
+        "order": 1,
+        "results": { "mark": "2-4", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "PAR",
+        "noc": "PAR",
+        "name": "Paraguay",
+        "order": 2,
+        "results": { "mark": "2-4", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-27T21:00:00+02:00",
+    "endDate": "2024-07-27T23:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPA-004",
+    "unitName": "Men's Group A - Match 4",
+    "phaseName": "Group A",
+    "venueDescription": "Stade de Nice",
+    "locationDescription": "Nice",
+    "competitors": [
+      {
+        "code": "FRA",
+        "noc": "FRA",
+        "name": "France",
+        "order": 1,
+        "results": { "mark": "1-0", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "GIN",
+        "noc": "GIN",
+        "name": "Guinea",
+        "order": 2,
+        "results": { "mark": "1-0", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-27T21:00:00+02:00",
+    "endDate": "2024-07-27T23:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPD-004",
+    "unitName": "Men's Group D - Match 4",
+    "phaseName": "Group D",
+    "venueDescription": "Stade de Bordeaux",
+    "locationDescription": "Bordeaux",
+    "competitors": [
+      {
+        "code": "JPN",
+        "noc": "JPN",
+        "name": "Japan",
+        "order": 1,
+        "results": { "mark": "1-0", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "MLI",
+        "noc": "MLI",
+        "name": "Mali",
+        "order": 2,
+        "results": { "mark": "1-0", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-28T17:00:00+02:00",
+    "endDate": "2024-07-28T19:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPA-003",
+    "unitName": "Women's Group A - Match 3",
+    "phaseName": "Group A",
+    "venueDescription": "Stade de Lyon",
+    "locationDescription": "Décines-Charpieu",
+    "competitors": [
+      {
+        "code": "NZL",
+        "noc": "NZL",
+        "name": "New Zealand",
+        "order": 1,
+        "results": { "mark": "0-2", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "COL",
+        "noc": "COL",
+        "name": "Colombia",
+        "order": 2,
+        "results": { "mark": "0-2", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-28T17:00:00+02:00",
+    "endDate": "2024-07-28T19:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPC-003",
+    "unitName": "Women's Group C - Match 3",
+    "phaseName": "Group C",
+    "venueDescription": "Parc des Princes",
+    "locationDescription": "Paris",
+    "competitors": [
+      {
+        "code": "BRA",
+        "noc": "BRA",
+        "name": "Brazil",
+        "order": 1,
+        "results": { "mark": "1-2", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "JPN",
+        "noc": "JPN",
+        "name": "Japan",
+        "order": 2,
+        "results": { "mark": "1-2", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-28T19:00:00+02:00",
+    "endDate": "2024-07-28T21:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPB-003",
+    "unitName": "Women's Group B - Match 3",
+    "phaseName": "Group B",
+    "venueDescription": "Stade de Nice",
+    "locationDescription": "Nice",
+    "competitors": [
+      {
+        "code": "AUS",
+        "noc": "AUS",
+        "name": "Australia",
+        "order": 1,
+        "results": { "mark": "6-5", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "ZAM",
+        "noc": "ZAM",
+        "name": "Zambia",
+        "order": 2,
+        "results": { "mark": "6-5", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-28T19:00:00+02:00",
+    "endDate": "2024-07-28T21:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPC-004",
+    "unitName": "Women's Group C - Match 4",
+    "phaseName": "Group C",
+    "venueDescription": "Stade de la Beaujoire",
+    "locationDescription": "Nantes",
+    "competitors": [
+      {
+        "code": "ESP",
+        "noc": "ESP",
+        "name": "Spain",
+        "order": 1,
+        "results": { "mark": "1-0", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "NGA",
+        "noc": "NGA",
+        "name": "Nigeria",
+        "order": 2,
+        "results": { "mark": "1-0", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-28T21:00:00+02:00",
+    "endDate": "2024-07-28T23:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPA-004",
+    "unitName": "Women's Group A - Match 4",
+    "phaseName": "Group A",
+    "venueDescription": "Stade Geoffroy-Guichard",
+    "locationDescription": "Saint-Étienne",
+    "competitors": [
+      {
+        "code": "FRA",
+        "noc": "FRA",
+        "name": "France",
+        "order": 1,
+        "results": { "mark": "1-2", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "CAN",
+        "noc": "CAN",
+        "name": "Canada",
+        "order": 2,
+        "results": { "mark": "1-2", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-28T21:00:00+02:00",
+    "endDate": "2024-07-28T23:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPB-004",
+    "unitName": "Women's Group B - Match 4",
+    "phaseName": "Group B",
+    "venueDescription": "Stade de Marseille",
+    "locationDescription": "Marseille",
+    "competitors": [
+      {
+        "code": "USA",
+        "noc": "USA",
+        "name": "United States",
+        "order": 1,
+        "results": { "mark": "4-1", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "GER",
+        "noc": "GER",
+        "name": "Germany",
+        "order": 2,
+        "results": { "mark": "4-1", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-30T15:00:00+02:00",
+    "endDate": "2024-07-30T17:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPC-005",
+    "unitName": "Men's Group C - Match 5",
+    "phaseName": "Group C",
+    "venueDescription": "Parc des Princes",
+    "locationDescription": "Paris",
+    "competitors": [
+      {
+        "code": "DOM",
+        "noc": "DOM",
+        "name": "Dominican Republic",
+        "order": 1,
+        "results": { "mark": "1-1", "winnerLoserTie": "T" }
+      },
+      {
+        "code": "UZB",
+        "noc": "UZB",
+        "name": "Uzbekistan",
+        "order": 2,
+        "results": { "mark": "1-1", "winnerLoserTie": "T" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-30T15:00:00+02:00",
+    "endDate": "2024-07-30T17:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPC-006",
+    "unitName": "Men's Group C - Match 6",
+    "phaseName": "Group C",
+    "venueDescription": "Stade de Bordeaux",
+    "locationDescription": "Bordeaux",
+    "competitors": [
+      {
+        "code": "ESP",
+        "noc": "ESP",
+        "name": "Spain",
+        "order": 1,
+        "results": { "mark": "1-2", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "EGY",
+        "noc": "EGY",
+        "name": "Egypt",
+        "order": 2,
+        "results": { "mark": "1-2", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-30T17:00:00+02:00",
+    "endDate": "2024-07-30T19:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPB-005",
+    "unitName": "Men's Group B - Match 5",
+    "phaseName": "Group B",
+    "venueDescription": "Stade de Lyon",
+    "locationDescription": "Décines-Charpieu",
+    "competitors": [
+      {
+        "code": "UKR",
+        "noc": "UKR",
+        "name": "Ukraine",
+        "order": 1,
+        "results": { "mark": "0-2", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "ARG",
+        "noc": "ARG",
+        "name": "Argentina",
+        "order": 2,
+        "results": { "mark": "0-2", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-30T17:00:00+02:00",
+    "endDate": "2024-07-30T19:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPB-006",
+    "unitName": "Men's Group B - Match 6",
+    "phaseName": "Group B",
+    "venueDescription": "Stade de Nice",
+    "locationDescription": "Nice",
+    "competitors": [
+      {
+        "code": "MAR",
+        "noc": "MAR",
+        "name": "Morocco",
+        "order": 1,
+        "results": { "mark": "3-0", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "IRQ",
+        "noc": "IRQ",
+        "name": "Iraq",
+        "order": 2,
+        "results": { "mark": "3-0", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-30T19:00:00+02:00",
+    "endDate": "2024-07-30T21:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPA-005",
+    "unitName": "Men's Group A - Match 5",
+    "phaseName": "Group A",
+    "venueDescription": "Stade de Marseille",
+    "locationDescription": "Marseille",
+    "competitors": [
+      {
+        "code": "NZL",
+        "noc": "NZL",
+        "name": "New Zealand",
+        "order": 1,
+        "results": { "mark": "0-3", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "FRA",
+        "noc": "FRA",
+        "name": "France",
+        "order": 2,
+        "results": { "mark": "0-3", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-30T19:00:00+02:00",
+    "endDate": "2024-07-30T21:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPA-006",
+    "unitName": "Men's Group A - Match 6",
+    "phaseName": "Group A",
+    "venueDescription": "Stade Geoffroy-Guichard",
+    "locationDescription": "Saint-Étienne",
+    "competitors": [
+      {
+        "code": "USA",
+        "noc": "USA",
+        "name": "United States",
+        "order": 1,
+        "results": { "mark": "3-0", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "GIN",
+        "noc": "GIN",
+        "name": "Guinea",
+        "order": 2,
+        "results": { "mark": "3-0", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-30T21:00:00+02:00",
+    "endDate": "2024-07-30T23:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPD-005",
+    "unitName": "Men's Group D - Match 5",
+    "phaseName": "Group D",
+    "venueDescription": "Stade de la Beaujoire",
+    "locationDescription": "Nantes",
+    "competitors": [
+      {
+        "code": "ISR",
+        "noc": "ISR",
+        "name": "Israel",
+        "order": 1,
+        "results": { "mark": "0-1", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "JPN",
+        "noc": "JPN",
+        "name": "Japan",
+        "order": 2,
+        "results": { "mark": "0-1", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-30T21:00:00+02:00",
+    "endDate": "2024-07-30T23:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GPD-006",
+    "unitName": "Men's Group D - Match 6",
+    "phaseName": "Group D",
+    "venueDescription": "Parc des Princes",
+    "locationDescription": "Paris",
+    "competitors": [
+      {
+        "code": "PAR",
+        "noc": "PAR",
+        "name": "Paraguay",
+        "order": 1,
+        "results": { "mark": "1-0", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "MLI",
+        "noc": "MLI",
+        "name": "Mali",
+        "order": 2,
+        "results": { "mark": "1-0", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-31T17:00:00+02:00",
+    "endDate": "2024-07-31T19:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPC-005",
+    "unitName": "Women's Group C - Match 5",
+    "phaseName": "Group C",
+    "venueDescription": "Stade de Bordeaux",
+    "locationDescription": "Bordeaux",
+    "competitors": [
+      {
+        "code": "BRA",
+        "noc": "BRA",
+        "name": "Brazil",
+        "order": 1,
+        "results": { "mark": "0-2", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "ESP",
+        "noc": "ESP",
+        "name": "Spain",
+        "order": 2,
+        "results": { "mark": "0-2", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-31T17:00:00+02:00",
+    "endDate": "2024-07-31T19:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPC-006",
+    "unitName": "Women's Group C - Match 6",
+    "phaseName": "Group C",
+    "venueDescription": "Stade de la Beaujoire",
+    "locationDescription": "Nantes",
+    "competitors": [
+      {
+        "code": "JPN",
+        "noc": "JPN",
+        "name": "Japan",
+        "order": 1,
+        "results": { "mark": "3-1", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "NGA",
+        "noc": "NGA",
+        "name": "Nigeria",
+        "order": 2,
+        "results": { "mark": "3-1", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-31T19:00:00+02:00",
+    "endDate": "2024-07-31T21:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPB-005",
+    "unitName": "Women's Group B - Match 5",
+    "phaseName": "Group B",
+    "venueDescription": "Stade de Marseille",
+    "locationDescription": "Marseille",
+    "competitors": [
+      {
+        "code": "AUS",
+        "noc": "AUS",
+        "name": "Australia",
+        "order": 1,
+        "results": { "mark": "1-2", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "USA",
+        "noc": "USA",
+        "name": "United States",
+        "order": 2,
+        "results": { "mark": "1-2", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-31T19:00:00+02:00",
+    "endDate": "2024-07-31T21:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPB-006",
+    "unitName": "Women's Group B - Match 6",
+    "phaseName": "Group B",
+    "venueDescription": "Stade Geoffroy-Guichard",
+    "locationDescription": "Saint-Étienne",
+    "competitors": [
+      {
+        "code": "ZAM",
+        "noc": "ZAM",
+        "name": "Zambia",
+        "order": 1,
+        "results": { "mark": "1-4", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "GER",
+        "noc": "GER",
+        "name": "Germany",
+        "order": 2,
+        "results": { "mark": "1-4", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-31T21:00:00+02:00",
+    "endDate": "2024-07-31T23:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPA-005",
+    "unitName": "Women's Group A - Match 5",
+    "phaseName": "Group A",
+    "venueDescription": "Stade de Lyon",
+    "locationDescription": "Décines-Charpieu",
+    "competitors": [
+      {
+        "code": "NZL",
+        "noc": "NZL",
+        "name": "New Zealand",
+        "order": 1,
+        "results": { "mark": "1-2", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "FRA",
+        "noc": "FRA",
+        "name": "France",
+        "order": 2,
+        "results": { "mark": "1-2", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-07-31T21:00:00+02:00",
+    "endDate": "2024-07-31T23:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GPA-006",
+    "unitName": "Women's Group A - Match 6",
+    "phaseName": "Group A",
+    "venueDescription": "Stade de Nice",
+    "locationDescription": "Nice",
+    "competitors": [
+      {
+        "code": "COL",
+        "noc": "COL",
+        "name": "Colombia",
+        "order": 1,
+        "results": { "mark": "0-1", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "CAN",
+        "noc": "CAN",
+        "name": "Canada",
+        "order": 2,
+        "results": { "mark": "0-1", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-08-02T15:00:00+02:00",
+    "endDate": "2024-08-02T17:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-QF-001",
+    "unitName": "Men's Quarter-final 1",
+    "phaseName": "Quarter-final",
+    "venueDescription": "Parc des Princes",
+    "locationDescription": "Paris",
+    "competitors": [
+      {
+        "code": "MAR",
+        "noc": "MAR",
+        "name": "Morocco",
+        "order": 1,
+        "results": { "mark": "4-0", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "USA",
+        "noc": "USA",
+        "name": "United States",
+        "order": 2,
+        "results": { "mark": "4-0", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-08-02T17:00:00+02:00",
+    "endDate": "2024-08-02T19:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-QF-002",
+    "unitName": "Men's Quarter-final 2",
+    "phaseName": "Quarter-final",
+    "venueDescription": "Stade de Lyon",
+    "locationDescription": "Décines-Charpieu",
+    "competitors": [
+      {
+        "code": "JPN",
+        "noc": "JPN",
+        "name": "Japan",
+        "order": 1,
+        "results": { "mark": "0-3", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "ESP",
+        "noc": "ESP",
+        "name": "Spain",
+        "order": 2,
+        "results": { "mark": "0-3", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-08-02T19:00:00+02:00",
+    "endDate": "2024-08-02T21:30:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-QF-003",
+    "unitName": "Men's Quarter-final 3",
+    "phaseName": "Quarter-final",
+    "venueDescription": "Stade de Marseille",
+    "locationDescription": "Marseille",
+    "competitors": [
+      {
+        "code": "EGY",
+        "noc": "EGY",
+        "name": "Egypt",
+        "order": 1,
+        "results": { "mark": "1-1", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "PAR",
+        "noc": "PAR",
+        "name": "Paraguay",
+        "order": 2,
+        "results": { "mark": "1-1", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED",
+    "resultStatus": "After penalty shoot-out"
+  },
+  {
+    "startDate": "2024-08-02T21:00:00+02:00",
+    "endDate": "2024-08-02T23:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-QF-004",
+    "unitName": "Men's Quarter-final 4",
+    "phaseName": "Quarter-final",
+    "venueDescription": "Stade de Bordeaux",
+    "locationDescription": "Bordeaux",
+    "competitors": [
+      {
+        "code": "FRA",
+        "noc": "FRA",
+        "name": "France",
+        "order": 1,
+        "results": { "mark": "1-0", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "ARG",
+        "noc": "ARG",
+        "name": "Argentina",
+        "order": 2,
+        "results": { "mark": "1-0", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-08-03T15:00:00+02:00",
+    "endDate": "2024-08-03T17:30:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-QF-001",
+    "unitName": "Women's Quarter-final 1",
+    "phaseName": "Quarter-final",
+    "venueDescription": "Parc des Princes",
+    "locationDescription": "Paris",
+    "competitors": [
+      {
+        "code": "USA",
+        "noc": "USA",
+        "name": "United States",
+        "order": 1,
+        "results": { "mark": "1-0", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "JPN",
+        "noc": "JPN",
+        "name": "Japan",
+        "order": 2,
+        "results": { "mark": "1-0", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED",
+    "resultStatus": "After extra time"
+  },
+  {
+    "startDate": "2024-08-03T17:00:00+02:00",
+    "endDate": "2024-08-03T19:30:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-QF-002",
+    "unitName": "Women's Quarter-final 2",
+    "phaseName": "Quarter-final",
+    "venueDescription": "Stade de Lyon",
+    "locationDescription": "Décines-Charpieu",
+    "competitors": [
+      {
+        "code": "ESP",
+        "noc": "ESP",
+        "name": "Spain",
+        "order": 1,
+        "results": { "mark": "2-2", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "COL",
+        "noc": "COL",
+        "name": "Colombia",
+        "order": 2,
+        "results": { "mark": "2-2", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED",
+    "resultStatus": "After penalty shoot-out"
+  },
+  {
+    "startDate": "2024-08-03T19:00:00+02:00",
+    "endDate": "2024-08-03T21:30:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-QF-003",
+    "unitName": "Women's Quarter-final 3",
+    "phaseName": "Quarter-final",
+    "venueDescription": "Stade de Marseille",
+    "locationDescription": "Marseille",
+    "competitors": [
+      {
+        "code": "CAN",
+        "noc": "CAN",
+        "name": "Canada",
+        "order": 1,
+        "results": { "mark": "0-0", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "GER",
+        "noc": "GER",
+        "name": "Germany",
+        "order": 2,
+        "results": { "mark": "0-0", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED",
+    "resultStatus": "After penalty shoot-out"
+  },
+  {
+    "startDate": "2024-08-03T21:00:00+02:00",
+    "endDate": "2024-08-03T23:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-QF-004",
+    "unitName": "Women's Quarter-final 4",
+    "phaseName": "Quarter-final",
+    "venueDescription": "Stade de la Beaujoire",
+    "locationDescription": "Nantes",
+    "competitors": [
+      {
+        "code": "FRA",
+        "noc": "FRA",
+        "name": "France",
+        "order": 1,
+        "results": { "mark": "0-1", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "BRA",
+        "noc": "BRA",
+        "name": "Brazil",
+        "order": 2,
+        "results": { "mark": "0-1", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-08-05T18:00:00+02:00",
+    "endDate": "2024-08-05T20:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-SF-001",
+    "unitName": "Men's Semi-final 1",
+    "phaseName": "Semi-final",
+    "venueDescription": "Stade de Marseille",
+    "locationDescription": "Marseille",
+    "competitors": [
+      {
+        "code": "MAR",
+        "noc": "MAR",
+        "name": "Morocco",
+        "order": 1,
+        "results": { "mark": "1-2", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "ESP",
+        "noc": "ESP",
+        "name": "Spain",
+        "order": 2,
+        "results": { "mark": "1-2", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-08-05T21:00:00+02:00",
+    "endDate": "2024-08-05T23:30:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-SF-002",
+    "unitName": "Men's Semi-final 2",
+    "phaseName": "Semi-final",
+    "venueDescription": "Stade de Lyon",
+    "locationDescription": "Décines-Charpieu",
+    "competitors": [
+      {
+        "code": "FRA",
+        "noc": "FRA",
+        "name": "France",
+        "order": 1,
+        "results": { "mark": "3-1", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "EGY",
+        "noc": "EGY",
+        "name": "Egypt",
+        "order": 2,
+        "results": { "mark": "3-1", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED",
+    "resultStatus": "After extra time"
+  },
+  {
+    "startDate": "2024-08-06T18:00:00+02:00",
+    "endDate": "2024-08-06T20:30:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-SF-001",
+    "unitName": "Women's Semi-final 1",
+    "phaseName": "Semi-final",
+    "venueDescription": "Stade de Lyon",
+    "locationDescription": "Décines-Charpieu",
+    "competitors": [
+      {
+        "code": "USA",
+        "noc": "USA",
+        "name": "United States",
+        "order": 1,
+        "results": { "mark": "1-0", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "GER",
+        "noc": "GER",
+        "name": "Germany",
+        "order": 2,
+        "results": { "mark": "1-0", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED",
+    "resultStatus": "After extra time"
+  },
+  {
+    "startDate": "2024-08-06T21:00:00+02:00",
+    "endDate": "2024-08-06T23:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-SF-002",
+    "unitName": "Women's Semi-final 2",
+    "phaseName": "Semi-final",
+    "venueDescription": "Stade de Marseille",
+    "locationDescription": "Marseille",
+    "competitors": [
+      {
+        "code": "BRA",
+        "noc": "BRA",
+        "name": "Brazil",
+        "order": 1,
+        "results": { "mark": "4-2", "winnerLoserTie": "W" }
+      },
+      {
+        "code": "ESP",
+        "noc": "ESP",
+        "name": "Spain",
+        "order": 2,
+        "results": { "mark": "4-2", "winnerLoserTie": "L" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-08-08T17:00:00+02:00",
+    "endDate": "2024-08-08T19:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-BRZ-001",
+    "unitName": "Men's Bronze Medal Match",
+    "phaseName": "Bronze Medal Match",
+    "venueDescription": "Stade de la Beaujoire",
+    "locationDescription": "Nantes",
+    "competitors": [
+      {
+        "code": "EGY",
+        "noc": "EGY",
+        "name": "Egypt",
+        "order": 1,
+        "results": { "mark": "0-6", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "MAR",
+        "noc": "MAR",
+        "name": "Morocco",
+        "order": 2,
+        "results": { "mark": "0-6", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-08-09T15:00:00+02:00",
+    "endDate": "2024-08-09T17:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-BRZ-001",
+    "unitName": "Women's Bronze Medal Match",
+    "phaseName": "Bronze Medal Match",
+    "venueDescription": "Stade de Lyon",
+    "locationDescription": "Décines-Charpieu",
+    "competitors": [
+      {
+        "code": "ESP",
+        "noc": "ESP",
+        "name": "Spain",
+        "order": 1,
+        "results": { "mark": "0-1", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "GER",
+        "noc": "GER",
+        "name": "Germany",
+        "order": 2,
+        "results": { "mark": "0-1", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  },
+  {
+    "startDate": "2024-08-09T18:00:00+02:00",
+    "endDate": "2024-08-09T20:30:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Men",
+    "gender": "M",
+    "unitCode": "FBLM-GLD-001",
+    "unitName": "Men's Gold Medal Match",
+    "phaseName": "Gold Medal Match",
+    "venueDescription": "Parc des Princes",
+    "locationDescription": "Paris",
+    "competitors": [
+      {
+        "code": "FRA",
+        "noc": "FRA",
+        "name": "France",
+        "order": 1,
+        "results": { "mark": "3-5", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "ESP",
+        "noc": "ESP",
+        "name": "Spain",
+        "order": 2,
+        "results": { "mark": "3-5", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED",
+    "resultStatus": "After extra time"
+  },
+  {
+    "startDate": "2024-08-10T17:00:00+02:00",
+    "endDate": "2024-08-10T19:00:00+02:00",
+    "disciplineCode": "FBL",
+    "disciplineName": "Football",
+    "eventName": "Women",
+    "gender": "W",
+    "unitCode": "FBLW-GLD-001",
+    "unitName": "Women's Gold Medal Match",
+    "phaseName": "Gold Medal Match",
+    "venueDescription": "Parc des Princes",
+    "locationDescription": "Paris",
+    "competitors": [
+      {
+        "code": "BRA",
+        "noc": "BRA",
+        "name": "Brazil",
+        "order": 1,
+        "results": { "mark": "0-1", "winnerLoserTie": "L" }
+      },
+      {
+        "code": "USA",
+        "noc": "USA",
+        "name": "United States",
+        "order": 2,
+        "results": { "mark": "0-1", "winnerLoserTie": "W" }
+      }
+    ],
+    "status": "FINISHED"
+  }
+]
