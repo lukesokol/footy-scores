@@ -1,3 +1,4 @@
+import { Sun, Moon, Monitor, Trophy } from 'lucide-react'
 import { useTheme } from '@/hooks'
 
 interface HeaderProps {
@@ -6,10 +7,10 @@ interface HeaderProps {
 
 type Theme = 'light' | 'dark' | 'system'
 
-const themeIcons: Record<Theme, string> = {
-  light: '☀️',
-  dark: '🌙',
-  system: '💻',
+const themeIcons: Record<Theme, typeof Sun> = {
+  light: Sun,
+  dark: Moon,
+  system: Monitor,
 }
 
 const nextTheme: Record<Theme, Theme> = {
@@ -20,15 +21,14 @@ const nextTheme: Record<Theme, Theme> = {
 
 export function Header({ matchCount }: HeaderProps) {
   const { theme, setTheme } = useTheme()
+  const ThemeIcon = themeIcons[theme]
 
   return (
     <header className="border-border-subtle bg-surface-raised border-b">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3">
-          <div className="bg-accent/10 flex h-9 w-9 items-center justify-center rounded-lg">
-            <span className="text-lg" role="img" aria-label="football">
-              ⚽
-            </span>
+          <div className="bg-accent/10 text-accent flex h-9 w-9 items-center justify-center rounded-lg">
+            <Trophy size={18} aria-hidden />
           </div>
           <div>
             <h1 className="text-text-primary text-lg font-semibold tracking-tight">FootyScores</h1>
@@ -44,11 +44,11 @@ export function Header({ matchCount }: HeaderProps) {
           <button
             type="button"
             onClick={() => setTheme(nextTheme[theme])}
-            className="border-border-subtle hover:bg-surface-overlay flex h-8 w-8 items-center justify-center rounded-lg border transition-colors"
+            className="border-border-subtle text-text-secondary hover:bg-surface-overlay flex h-8 w-8 items-center justify-center rounded-lg border transition-colors"
             aria-label={`Theme: ${theme}. Click to switch.`}
             title={`Current: ${theme}`}
           >
-            <span className="text-sm">{themeIcons[theme]}</span>
+            <ThemeIcon size={16} />
           </button>
         </div>
       </div>

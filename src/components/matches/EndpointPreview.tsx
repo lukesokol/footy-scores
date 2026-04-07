@@ -1,3 +1,4 @@
+import { Code2 } from 'lucide-react'
 import type { FootyScoresEndpoint } from '@/types'
 
 interface EndpointPreviewProps {
@@ -8,9 +9,7 @@ export function EndpointPreview({ endpoint }: EndpointPreviewProps) {
   if (!endpoint) {
     return (
       <div className="border-border-default flex flex-col items-center justify-center rounded-xl border border-dashed px-6 py-16 text-center">
-        <div className="mb-3 text-2xl opacity-30" aria-hidden>
-          {'{ }'}
-        </div>
+        <Code2 size={28} className="text-text-muted mb-3 opacity-30" aria-hidden />
         <p className="text-text-secondary text-sm">Select a match to preview</p>
         <p className="text-text-muted mt-1 text-xs">The endpoint JSON will appear here.</p>
       </div>

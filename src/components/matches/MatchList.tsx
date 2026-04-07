@@ -1,3 +1,4 @@
+import { SearchX } from 'lucide-react'
 import type { FootyScoresEndpoint } from '@/types'
 import { MatchCard } from './MatchCard'
 
@@ -11,7 +12,7 @@ export function MatchList({ endpoints, selectedEndpoint, onSelectEndpoint }: Mat
   if (endpoints.length === 0) {
     return (
       <div className="border-border-default flex flex-col items-center justify-center rounded-xl border border-dashed px-6 py-16 text-center">
-        <div className="mb-3 text-3xl opacity-40">⚽</div>
+        <SearchX size={32} className="text-text-muted mb-3 opacity-40" aria-hidden />
         <p className="text-text-secondary text-sm">No matches found</p>
         <p className="text-text-muted mt-1 text-xs">
           Adjust your filters or load data to get started.

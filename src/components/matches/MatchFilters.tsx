@@ -1,3 +1,4 @@
+import { X } from 'lucide-react'
 import type { GenderFilter, RoundFilter } from '@/hooks'
 
 interface MatchFiltersProps {
@@ -79,10 +80,10 @@ export function MatchFilters({
           <button
             type="button"
             onClick={() => onSearchChange('')}
-            className="text-text-muted hover:text-text-secondary absolute top-1/2 right-2 -translate-y-1/2 text-xs"
+            className="text-text-muted hover:text-text-secondary absolute top-1/2 right-2 -translate-y-1/2"
             aria-label="Clear search"
           >
-            ✕
+            <X size={14} />
           </button>
         )}
       </div>

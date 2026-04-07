@@ -9,7 +9,7 @@ const mockEndpoint: FootyScoresEndpoint = {
   venue: { name: 'Parc des Princes', city: 'Paris' },
   kickoff: '2024-07-24T15:00:00+02:00',
   status: 'FT',
-  teams: { home: 'Uzbekistan', away: 'Spain' },
+  teams: { home: 'Uzbekistan', homeNoc: 'UZB', away: 'Spain', awayNoc: 'ESP' },
   score: { home: 1, away: 2, halfTime: { home: 0, away: 0 } },
   scorers: [],
   lineups: null,

@@ -11,8 +11,7 @@
       // Prevent flash: apply theme class before first paint
       ;(function () {
         var s = localStorage.getItem('theme')
-        var dark =
-          s === 'dark' || (!s && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        var dark = s === 'dark' || (!s && window.matchMedia('(prefers-color-scheme: dark)').matches)
         if (dark) document.documentElement.classList.add('dark')
       })()
     </script>
