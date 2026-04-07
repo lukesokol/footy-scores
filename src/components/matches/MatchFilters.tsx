@@ -31,6 +31,7 @@ export function MatchFilters({
         className="border-border-subtle bg-surface-raised flex gap-0.5 rounded-lg border p-0.5"
         aria-label="Gender"
       >
+        <legend className="sr-only">Gender filter</legend>
         {genderOptions.map((opt) => (
           <button
             key={opt.value}
@@ -65,14 +66,26 @@ export function MatchFilters({
         </select>
       </label>
 
-      <input
-        type="search"
-        value={searchQuery}
-        onChange={(e) => onSearchChange(e.target.value)}
-        placeholder="Search teams, venues…"
-        className="border-border-subtle bg-surface-raised text-text-primary placeholder-text-muted focus:border-accent focus:ring-accent rounded-lg border px-3 py-1.5 text-xs focus:ring-1 focus:outline-none"
-        aria-label="Search matches"
-      />
+      <div className="relative">
+        <input
+          type="search"
+          value={searchQuery}
+          onChange={(e) => onSearchChange(e.target.value)}
+          placeholder="Search teams, venues, rounds…"
+          className="border-border-subtle bg-surface-raised text-text-primary placeholder-text-muted focus:border-accent focus:ring-accent rounded-lg border px-3 py-1.5 pr-7 text-xs focus:ring-1 focus:outline-none"
+          aria-label="Search matches"
+        />
+        {searchQuery.length > 0 && (
+          <button
+            type="button"
+            onClick={() => onSearchChange('')}
+            className="text-text-muted hover:text-text-secondary absolute top-1/2 right-2 -translate-y-1/2 text-xs"
+            aria-label="Clear search"
+          >
+            ✕
+          </button>
+        )}
+      </div>
     </div>
   )
 }

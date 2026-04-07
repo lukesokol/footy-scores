@@ -28,7 +28,8 @@ export function MatchCard({ endpoint, onSelect, isSelected }: MatchCardProps) {
       type="button"
       onClick={() => onSelect(endpoint)}
       aria-pressed={isSelected}
-      className={`group w-full rounded-xl border p-4 text-left transition-all duration-150 ${
+      aria-label={`${endpoint.teams.home} vs ${endpoint.teams.away}, ${genderBadge}, ${endpoint.competition.round}, ${endpoint.status}`}
+      className={`group w-full rounded-xl border p-4 text-left transition-all duration-200 active:scale-[0.98] ${
         isSelected
           ? 'border-accent bg-accent/5 ring-accent/30 ring-1'
           : 'border-border-subtle bg-surface-raised hover:border-border-default hover:bg-surface-overlay'
@@ -67,6 +68,7 @@ export function MatchCard({ endpoint, onSelect, isSelected }: MatchCardProps) {
                 ? 'bg-success-bg text-success'
                 : 'bg-surface-overlay text-warning'
             }`}
+            aria-label={`Match status: ${endpoint.status === 'FT' ? 'Full Time' : 'Scheduled'}`}
           >
             {endpoint.status}
           </span>

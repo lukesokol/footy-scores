@@ -8,7 +8,9 @@ export function EndpointPreview({ endpoint }: EndpointPreviewProps) {
   if (!endpoint) {
     return (
       <div className="border-border-default flex flex-col items-center justify-center rounded-xl border border-dashed px-6 py-16 text-center">
-        <div className="mb-3 text-2xl opacity-30">{}</div>
+        <div className="mb-3 text-2xl opacity-30" aria-hidden>
+          {'{ }'}
+        </div>
         <p className="text-text-secondary text-sm">Select a match to preview</p>
         <p className="text-text-muted mt-1 text-xs">The endpoint JSON will appear here.</p>
       </div>
@@ -25,7 +27,11 @@ export function EndpointPreview({ endpoint }: EndpointPreviewProps) {
           application/json
         </span>
       </div>
-      <pre className="bg-surface text-text-secondary max-h-[65vh] overflow-auto px-4 py-4 font-mono text-xs leading-relaxed">
+      <pre
+        className="bg-surface text-text-secondary max-h-[50vh] overflow-auto px-4 py-4 font-mono text-xs leading-relaxed lg:max-h-[65vh]"
+        aria-label="Endpoint JSON preview"
+        tabIndex={0}
+      >
         <code>{JSON.stringify(endpoint, null, 2)}</code>
       </pre>
     </div>
