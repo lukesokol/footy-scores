@@ -1,5 +1,5 @@
 ---
-description: "Use when translating Figma designs into React components, extracting design tokens, or validating that implemented UI matches design specs. Requires Figma MCP server to be configured."
+description: 'Use when translating Figma designs into React components, extracting design tokens, or validating that implemented UI matches design specs. Requires Figma MCP server to be configured.'
 tools: [read, search, edit, web]
 ---
 
@@ -12,6 +12,7 @@ Translate Figma designs into production React components that follow project con
 ## Prerequisites
 
 Before starting, verify:
+
 1. Figma MCP server is configured in `.vscode/mcp.json`
 2. The Figma file URL or frame ID is provided
 3. Design tokens exist in `src/styles/tokens.ts` (or create them)

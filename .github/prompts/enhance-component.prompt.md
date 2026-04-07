@@ -1,6 +1,6 @@
 ---
-mode: agent
-description: "Redesign or enhance an existing component with improved styling, animations, or responsive behaviour"
+description: 'Redesign or enhance an existing component with improved styling, animations, or responsive behaviour'
+agent: 'agent'
 ---
 
 # Enhance Component: {{ component }}

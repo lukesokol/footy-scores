@@ -1,5 +1,5 @@
 ---
-description: "Use when validating that implemented UI matches Figma design specs. Compares rendered components against design frames for visual accuracy, spacing, and token compliance."
+description: 'Use when validating that implemented UI matches Figma design specs. Compares rendered components against design frames for visual accuracy, spacing, and token compliance.'
 tools: [read, search, web]
 ---
 

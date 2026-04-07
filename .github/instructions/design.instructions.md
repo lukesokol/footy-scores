@@ -1,6 +1,6 @@
 ---
-description: "Use when implementing UI improvements, design system tokens, theming, component styling, or integrating Figma design specs. Covers visual design patterns and design-to-code workflows."
-applyTo: "src/components/**"
+description: 'Use when implementing UI improvements, design system tokens, theming, component styling, or integrating Figma design specs. Covers visual design patterns and design-to-code workflows.'
+applyTo: 'src/components/**'
 ---
 
 # Design & UI Guidelines
@@ -36,9 +36,9 @@ If Figma is adopted as the design source of truth:
     "figma": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "figma-developer-mcp", "--figma-api-key=YOUR_KEY"]
-    }
-  }
+      "args": ["-y", "figma-developer-mcp", "--figma-api-key=YOUR_KEY"],
+    },
+  },
 }
 ```
 
