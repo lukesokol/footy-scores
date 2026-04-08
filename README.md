@@ -122,11 +122,11 @@ Each generated endpoint follows the exact structure defined in [`references/exam
 | `competition.round`  | Schedule phase       | Group stage, Quarterfinal, etc.         |
 | `venue`              | Schedule location    | Stadium name and city                   |
 | `kickoff`            | Schedule start time  | ISO 8601 with timezone                  |
-| `status`             | Inferred             | "FT" for completed matches              |
-| `teams`              | Schedule competitors | Home/away assignment                    |
-| `score`              | Schedule result      | `null` if not available                 |
-| `scorers`            | Not in schedule      | Empty array `[]`                        |
-| `lineups`            | Not in schedule      | `null`                                  |
+| `status`             | Result data          | "FT", "AET", or "PEN"                   |
+| `teams`              | Schedule competitors | Home/away from `HOME_AWAY` entry        |
+| `score`              | Result periods       | Including HT, ET, penalties if present  |
+| `scorers`            | Play-by-play data    | Goals with minute, assist, type         |
+| `lineups`            | Team athletes data   | Starting XI, bench, formation, coach    |
 
 ## Endpoint Ordering
 
@@ -140,11 +140,11 @@ This ensures identical output for identical input data.
 
 ## Assumptions
 
-1. **Data completeness**: The Olympics schedule does not include detailed match data (scorers, lineups, halftime scores). These fields are generated with correct types but contain empty/null values.
-2. **Team assignment**: Home/away designation follows the schedule order. Where the schedule doesn't specify, the first-listed team is treated as home.
+1. **Data completeness**: The primary data path ("Fetch Match Data") retrieves detailed results including scorers, lineups, halftime/extra-time/penalty scores via the Olympics `RES_ByRSC_H2H` API. The static fallback dataset contains only basic schedule data — scorers and lineups are empty/null in that mode.
+2. **Team assignment**: Home/away designation is determined by the `HOME_AWAY` entry in the rich data. Where unavailable (legacy path), the first-listed competitor is treated as home.
 3. **Match count**: Paris 2024 football consisted of 32 men's matches (16 teams) and 24 women's matches (12 teams) = 56 total.
 4. **Timezone**: All kickoff times use the timezone provided by the schedule source (Paris local time, UTC+2).
-5. **Match status**: All Paris 2024 matches are completed, so status is "FT" for all.
+5. **Match status**: All Paris 2024 matches are completed. Status is mapped to "FT", "AET", or "PEN" based on the result data.
 
 ## Deployment
 
