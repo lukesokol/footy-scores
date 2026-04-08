@@ -151,21 +151,41 @@ export function MatchCard({ endpoint, onSelect, isSelected }: MatchCardProps) {
         </p>
       )}
 
-      {/* Compact scorer list */}
+      {/* Compact scorer list — two columns: home (left, right-aligned) | away (right, left-aligned) */}
       {endpoint.scorers.length > 0 && (
-        <div className="text-text-muted mb-2 w-full space-y-0.5 text-[11px] leading-tight">
-          {endpoint.scorers.slice(0, 6).map((s, i) => (
-            <p key={`${s.player}-${s.minute}-${i}`} className="truncate text-center">
-              <span className="font-mono text-[10px]">{s.minute}&apos;</span>{' '}
-              <span className={s.team === endpoint.teams.home ? 'text-text-primary' : ''}>
-                {s.player}
-              </span>
-              {s.type === 'penalty' && <span className="ml-0.5 opacity-60">(P)</span>}
-              {s.type === 'own_goal' && <span className="ml-0.5 opacity-60">(OG)</span>}
-            </p>
-          ))}
+        <div className="mb-2 grid w-full grid-cols-2 gap-x-2 text-[11px] leading-tight">
+          {/* Home scorers */}
+          <div className="text-text-muted space-y-0.5">
+            {endpoint.scorers
+              .filter((s) => s.team === endpoint.teams.home)
+              .slice(0, 3)
+              .map((s, i) => (
+                <p key={`h-${s.player}-${s.minute}-${i}`} className="truncate text-right">
+                  <span className="text-text-primary">{s.player}</span>{' '}
+                  <span className="font-mono text-[10px]">{s.minute}&apos;</span>
+                  {s.type === 'penalty' && <span className="ml-0.5 opacity-60">(P)</span>}
+                  {s.type === 'own_goal' && <span className="ml-0.5 opacity-60">(OG)</span>}
+                </p>
+              ))}
+          </div>
+          {/* Away scorers */}
+          <div className="text-text-muted space-y-0.5">
+            {endpoint.scorers
+              .filter((s) => s.team === endpoint.teams.away)
+              .slice(0, 3)
+              .map((s, i) => (
+                <p key={`a-${s.player}-${s.minute}-${i}`} className="truncate text-left">
+                  <span className="font-mono text-[10px]">{s.minute}&apos;</span>{' '}
+                  {s.player}
+                  {s.type === 'penalty' && <span className="ml-0.5 opacity-60">(P)</span>}
+                  {s.type === 'own_goal' && <span className="ml-0.5 opacity-60">(OG)</span>}
+                </p>
+              ))}
+          </div>
           {endpoint.scorers.length > 6 && (
-            <p className="text-center opacity-50">+{endpoint.scorers.length - 6} more</p>
+            <p className="text-text-muted col-span-2 text-center text-[10px] opacity-50">
+              +{endpoint.scorers.length - 6} more
+            </p>
           )}
         </div>
       )}

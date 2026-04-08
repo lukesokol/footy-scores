@@ -1,6 +1,8 @@
 import { useCallback, useState } from 'react'
 import {
   useMatchDetails,
+  useOlympicSchedule,
+  useEndpointGenerator,
   useEndpointGeneratorFromDetails,
   useExport,
   useMatchFilters,
@@ -11,8 +13,28 @@ import { LoadDataButton, ExportButton, StatusIndicator } from '@/components/cont
 import type { FootyScoresEndpoint } from '@/types'
 
 function App() {
-  const { matches, state, error, loadData } = useMatchDetails()
-  const { endpoints, count } = useEndpointGeneratorFromDetails(matches)
+  const { matches, state: detailState, error: detailError, loadData } = useMatchDetails()
+  const {
+    units,
+    state: scheduleState,
+    error: scheduleError,
+    loadFallback,
+  } = useOlympicSchedule()
+
+  const { endpoints: detailEndpoints } = useEndpointGeneratorFromDetails(matches)
+  const { endpoints: scheduleEndpoints } = useEndpointGenerator(units)
+
+  // Use whichever data source was loaded
+  const endpoints = detailEndpoints.length > 0 ? detailEndpoints : scheduleEndpoints
+  const count = endpoints.length
+  const state = detailState === 'success' || scheduleState === 'success'
+    ? 'success' as const
+    : detailState === 'loading' ? 'loading' as const
+    : detailState === 'error' ? detailState
+    : scheduleState !== 'idle' ? scheduleState
+    : detailState
+  const error = detailError ?? scheduleError
+
   const {
     gender,
     round,
@@ -34,7 +56,7 @@ function App() {
     <Layout matchCount={count}>
       {/* Controls bar */}
       <div className="border-border-subtle bg-surface-raised mb-6 flex flex-wrap items-center justify-between gap-4 rounded-xl border p-4">
-        <LoadDataButton state={state} onLoad={loadData} />
+        <LoadDataButton state={state} onLoad={loadData} onLoadFallback={loadFallback} />
         <StatusIndicator
           state={state}
           error={error}
