@@ -59,7 +59,7 @@ function FlagImg({ noc, className = '' }: { readonly noc: string; readonly class
       aria-hidden
       width={28}
       height={20}
-      className={`h-5 w-7 shrink-0 rounded-sm object-cover ${className}`}
+      className={`h-5 w-7 shrink-0 rounded-sm object-cover ring-1 ring-black/10 ${className}`}
       onError={(e) => {
         const target = e.currentTarget
         target.style.display = 'none'
@@ -92,12 +92,17 @@ export function MatchCard({ endpoint, onSelect, isSelected }: MatchCardProps) {
           : 'border-border-subtle bg-surface-raised hover:border-border-default hover:bg-surface-overlay'
       }`}
     >
-      {/* Header: gender badge + round */}
+      {/* Header: gender badge + round + match number */}
       <div className="mb-3 flex w-full items-center justify-between">
         <span className={`rounded-md px-2 py-0.5 text-xs font-medium ${genderColor}`}>
           {genderBadge}
         </span>
-        <span className="text-text-muted text-xs">{endpoint.competition.round}</span>
+        <span className="text-text-muted text-xs">
+          {endpoint.competition.round}
+          {endpoint.matchNumber != null && (
+            <span className="text-text-muted"> · Match {endpoint.matchNumber}</span>
+          )}
+        </span>
       </div>
 
       {/* Teams + score — 3-column centered grid */}
@@ -120,8 +125,14 @@ export function MatchCard({ endpoint, onSelect, isSelected }: MatchCardProps) {
         {/* Score — centered */}
         {endpoint.score ? (
           <div className="flex flex-col items-center">
-            <span className="bg-surface-overlay text-text-primary rounded-lg px-4 py-1.5 font-mono text-base font-bold tabular-nums">
-              {endpoint.score.home} – {endpoint.score.away}
+            <span className="bg-surface-overlay rounded-lg px-4 py-1.5 font-mono text-base tabular-nums">
+              <span className={homeWins ? 'text-text-primary font-bold' : 'text-text-muted font-medium'}>
+                {endpoint.score.home}
+              </span>
+              <span className="text-text-muted mx-1">–</span>
+              <span className={awayWins ? 'text-text-primary font-bold' : 'text-text-muted font-medium'}>
+                {endpoint.score.away}
+              </span>
             </span>
           </div>
         ) : (
@@ -131,7 +142,7 @@ export function MatchCard({ endpoint, onSelect, isSelected }: MatchCardProps) {
         {/* Away team — left-aligned away from score */}
         <div className="flex items-center gap-2">
           <FlagImg noc={endpoint.teams.awayNoc} />
-          <div className="min-w-0">
+          <div className="min-w-0 text-left">
             <p
               className={`text-text-primary text-sm leading-tight ${awayWins ? 'font-bold' : 'font-medium'}`}
             >
@@ -153,9 +164,9 @@ export function MatchCard({ endpoint, onSelect, isSelected }: MatchCardProps) {
 
       {/* Compact scorer list — two columns: home (left, right-aligned) | away (right, left-aligned) */}
       {endpoint.scorers.length > 0 && (
-        <div className="mb-2 grid w-full grid-cols-2 gap-x-2 text-[11px] leading-tight">
+        <div className="mb-2 grid w-full grid-cols-2 text-[11px] leading-tight">
           {/* Home scorers */}
-          <div className="text-text-muted space-y-0.5">
+          <div className="border-border-subtle text-text-muted space-y-0.5 border-r pr-2">
             {endpoint.scorers
               .filter((s) => s.team === endpoint.teams.home)
               .slice(0, 3)
@@ -169,7 +180,7 @@ export function MatchCard({ endpoint, onSelect, isSelected }: MatchCardProps) {
               ))}
           </div>
           {/* Away scorers */}
-          <div className="text-text-muted space-y-0.5">
+          <div className="text-text-muted space-y-0.5 pl-2">
             {endpoint.scorers
               .filter((s) => s.team === endpoint.teams.away)
               .slice(0, 3)

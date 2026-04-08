@@ -42,6 +42,15 @@ function genderSortOrder(gender: 'M' | 'W'): number {
   return gender === 'M' ? 0 : 1
 }
 
+/**
+ * Extract the trailing match number from a unit name or description.
+ * Examples: "Men's Group B - Match 3" → 3, "Quarter-final 2" → 2, "Gold Medal Match" → undefined
+ */
+function extractMatchNumber(text: string): number | undefined {
+  const m = text.match(/(\d+)\s*$/)
+  return m ? parseInt(m[1]!, 10) : undefined
+}
+
 // ---------------------------------------------------------------------------
 // Legacy path — from OlympicScheduleUnit (basic schedule data)
 // ---------------------------------------------------------------------------
@@ -95,6 +104,7 @@ export function generateEndpoint(unit: OlympicScheduleUnit): FootyScoresEndpoint
     },
     kickoff: unit.startDate,
     status: mapStatusLegacy(unit),
+    matchNumber: extractMatchNumber(unit.unitName),
     teams: {
       home: homeCompetitor?.name ?? 'TBD',
       homeNoc: homeCompetitor?.noc ?? '',
@@ -459,6 +469,7 @@ export function generateEndpointFromDetail(match: MatchDetailWithMeta): FootySco
       },
       kickoff: results.schedule.startDate,
       status: mapStatusRich(results),
+      matchNumber: extractMatchNumber(results.eventUnit.description),
       teams: { home: 'TBD', homeNoc: '', away: 'TBD', awayNoc: '' },
       score: null,
       scorers: [],
@@ -478,6 +489,7 @@ export function generateEndpointFromDetail(match: MatchDetailWithMeta): FootySco
     },
     kickoff: results.schedule.startDate,
     status: mapStatusRich(results),
+    matchNumber: extractMatchNumber(results.eventUnit.description),
     teams: {
       home: home.participant.name,
       homeNoc: home.participant.organisation.code,

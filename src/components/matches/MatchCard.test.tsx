@@ -26,7 +26,9 @@ describe('MatchCard', () => {
 
   it('renders score', () => {
     render(<MatchCard endpoint={mockEndpoint} onSelect={vi.fn()} isSelected={false} />)
-    expect(screen.getByText('1 – 2')).toBeInTheDocument()
+    expect(screen.getByText('1')).toBeInTheDocument()
+    expect(screen.getByText('–')).toBeInTheDocument()
+    expect(screen.getByText('2')).toBeInTheDocument()
   })
 
   it('renders gender badge', () => {

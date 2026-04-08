@@ -63,6 +63,7 @@ export interface FootyScoresEndpoint {
   readonly venue: Venue
   readonly kickoff: string
   readonly status: MatchStatus
+  readonly matchNumber?: number
   readonly teams: Teams
   readonly score: Score | null
   readonly scorers: readonly Scorer[]

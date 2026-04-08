@@ -14,7 +14,7 @@ function FlagImg({ noc, className = '' }: { readonly noc: string; readonly class
       aria-hidden
       width={32}
       height={22}
-      className={`h-5.5 w-8 shrink-0 rounded-sm object-cover ${className}`}
+      className={`h-5.5 w-8 shrink-0 rounded-sm object-cover ring-1 ring-black/10 ${className}`}
       onError={(e) => {
         const target = e.currentTarget
         target.style.display = 'none'

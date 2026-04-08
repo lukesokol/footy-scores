@@ -341,6 +341,18 @@ describe('generateEndpoint (legacy)', () => {
     )
   })
 
+  it('extracts matchNumber from unitName', () => {
+    expect(
+      generateEndpoint(makeUnit({ unitName: "Men's Group A - Match 3" })).matchNumber,
+    ).toBe(3)
+    expect(
+      generateEndpoint(makeUnit({ unitName: "Men's Quarter-final 2" })).matchNumber,
+    ).toBe(2)
+    expect(
+      generateEndpoint(makeUnit({ unitName: "Men's Gold Medal Match" })).matchNumber,
+    ).toBeUndefined()
+  })
+
   it('maps venue and city', () => {
     const endpoint = generateEndpoint(
       makeUnit({ venueDescription: 'Stade de Lyon', locationDescription: 'Lyon' }),
@@ -516,6 +528,23 @@ describe('generateEndpointFromDetail', () => {
       makeMatchDetail({ detail: makeDetailResponse({ description: 'Gold Medal Match' }) }),
     )
     expect(gold.competition.round).toBe('Gold Medal Match')
+  })
+
+  it('extracts matchNumber from eventUnit description', () => {
+    const group = generateEndpointFromDetail(
+      makeMatchDetail({ detail: makeDetailResponse({ description: 'Group B - Matchday 2' }) }),
+    )
+    expect(group.matchNumber).toBe(2)
+
+    const qf = generateEndpointFromDetail(
+      makeMatchDetail({ detail: makeDetailResponse({ description: 'Quarter-final 1' }) }),
+    )
+    expect(qf.matchNumber).toBe(1)
+
+    const medal = generateEndpointFromDetail(
+      makeMatchDetail({ detail: makeDetailResponse({ description: 'Gold Medal Match' }) }),
+    )
+    expect(medal.matchNumber).toBeUndefined()
   })
 
   it('maps venue and city from schedule', () => {
