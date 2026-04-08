@@ -4,7 +4,7 @@ test.describe('FootyScores App', () => {
   test('shows the app header and initial state', async ({ page }) => {
     await page.goto('/')
     await expect(page.getByRole('heading', { name: 'FootyScores' })).toBeVisible()
-    await expect(page.getByRole('button', { name: 'Fetch Schedule' })).toBeVisible()
+    await expect(page.getByRole('button', { name: 'Fetch Match Data' })).toBeVisible()
     await expect(page.getByRole('button', { name: 'Use Static Data' })).toBeVisible()
   })
 
@@ -64,8 +64,10 @@ test.describe('FootyScores App', () => {
     const firstCard = page.getByRole('listitem').first().getByRole('button')
     await firstCard.click()
 
-    // Should show endpoint preview with JSON
-    await expect(page.getByText('application/json')).toBeVisible()
+    // Modal opens on Details tab — switch to JSON tab
+    await page.getByRole('tab', { name: 'JSON' }).click()
+
+    // Should show endpoint JSON
     await expect(page.getByText(/"competition"/)).toBeVisible()
   })
 

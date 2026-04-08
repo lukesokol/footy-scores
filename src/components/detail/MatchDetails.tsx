@@ -58,13 +58,6 @@ function buildPeriodBreakdown(score: Score, status: string): string[] {
   return parts
 }
 
-const scorerTypeLabel: Record<string, string> = {
-  penalty: 'Pen',
-  own_goal: 'OG',
-  header: 'Header',
-  open_play: '',
-}
-
 function LineupTable({ entry, noc }: { readonly entry: LineupEntry; readonly noc: string }) {
   return (
     <div className="min-w-0 flex-1">
@@ -179,48 +172,89 @@ export function MatchDetails({ endpoint }: MatchDetailsProps) {
       {/* ── Scorers ── */}
       {scorers.length > 0 && (
         <div>
-          <div className="text-text-secondary mb-2 flex items-center gap-1.5 text-xs font-semibold">
+          <div className="text-text-secondary mb-3 flex items-center gap-1.5 text-xs font-semibold">
             <Trophy size={12} aria-hidden />
             Scorers
           </div>
-          <table className="w-full text-xs">
-            <thead>
-              <tr className="text-text-muted border-border-subtle border-b text-left text-[10px] tracking-wider uppercase">
-                <th className="w-10 py-1 font-medium">Min</th>
-                <th className="py-1 font-medium">Player</th>
-                <th className="py-1 font-medium">Assist</th>
-                <th className="w-14 py-1 text-right font-medium">Type</th>
-              </tr>
-            </thead>
-            <tbody>
-              {scorers.map((s, i) => (
-                <tr
-                  key={`${s.player}-${s.minute}-${i}`}
-                  className="border-border-subtle/50 border-b last:border-0"
-                >
-                  <td className="text-text-muted py-1.5 font-mono">{s.minute}&apos;</td>
-                  <td className="py-1.5">
-                    <span
-                      className={
-                        s.team === teams.home
-                          ? 'text-text-primary font-medium'
-                          : 'text-text-secondary'
-                      }
-                    >
-                      {s.player}
-                    </span>
-                    <span className="text-text-muted ml-1 text-[10px]">
-                      ({s.team === teams.home ? teams.homeNoc : teams.awayNoc})
-                    </span>
-                  </td>
-                  <td className="text-text-muted py-1.5">{s.assist ?? '—'}</td>
-                  <td className="text-text-muted py-1.5 text-right text-[10px] uppercase">
-                    {scorerTypeLabel[s.type] ?? s.type}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <div className="flex gap-5">
+            {/* Home scorers */}
+            <div className="min-w-0 flex-1">
+              <div className="mb-2 flex items-center gap-2">
+                <FlagImg noc={teams.homeNoc} />
+                <p className="text-text-primary text-sm font-semibold">{teams.home}</p>
+              </div>
+              {scorers.filter((s) => s.team === teams.home).length > 0 ? (
+                <div className="space-y-2">
+                  {scorers
+                    .filter((s) => s.team === teams.home)
+                    .map((s, i) => (
+                      <div key={`h-${s.player}-${s.minute}-${i}`} className="text-xs">
+                        <p>
+                          <span className="text-text-muted font-mono">{s.minute}&apos;</span>{' '}
+                          <span className="text-text-primary font-medium">{s.player}</span>
+                          {s.type === 'penalty' && (
+                            <span className="text-text-muted ml-1 text-[10px] uppercase">Pen</span>
+                          )}
+                          {s.type === 'own_goal' && (
+                            <span className="text-text-muted ml-1 text-[10px] uppercase">OG</span>
+                          )}
+                          {s.type === 'header' && (
+                            <span className="text-text-muted ml-1 text-[10px] uppercase">
+                              Header
+                            </span>
+                          )}
+                        </p>
+                        {s.assist && (
+                          <p className="text-text-muted ml-6 text-[11px]">↳ {s.assist}</p>
+                        )}
+                      </div>
+                    ))}
+                </div>
+              ) : (
+                <p className="text-text-muted text-xs">—</p>
+              )}
+            </div>
+
+            <div className="border-border-subtle w-px shrink-0 self-stretch border-l" />
+
+            {/* Away scorers */}
+            <div className="min-w-0 flex-1">
+              <div className="mb-2 flex items-center gap-2">
+                <FlagImg noc={teams.awayNoc} />
+                <p className="text-text-primary text-sm font-semibold">{teams.away}</p>
+              </div>
+              {scorers.filter((s) => s.team === teams.away).length > 0 ? (
+                <div className="space-y-2">
+                  {scorers
+                    .filter((s) => s.team === teams.away)
+                    .map((s, i) => (
+                      <div key={`a-${s.player}-${s.minute}-${i}`} className="text-xs">
+                        <p>
+                          <span className="text-text-muted font-mono">{s.minute}&apos;</span>{' '}
+                          <span className="text-text-secondary font-medium">{s.player}</span>
+                          {s.type === 'penalty' && (
+                            <span className="text-text-muted ml-1 text-[10px] uppercase">Pen</span>
+                          )}
+                          {s.type === 'own_goal' && (
+                            <span className="text-text-muted ml-1 text-[10px] uppercase">OG</span>
+                          )}
+                          {s.type === 'header' && (
+                            <span className="text-text-muted ml-1 text-[10px] uppercase">
+                              Header
+                            </span>
+                          )}
+                        </p>
+                        {s.assist && (
+                          <p className="text-text-muted ml-6 text-[11px]">↳ {s.assist}</p>
+                        )}
+                      </div>
+                    ))}
+                </div>
+              ) : (
+                <p className="text-text-muted text-xs">—</p>
+              )}
+            </div>
+          </div>
         </div>
       )}
 
