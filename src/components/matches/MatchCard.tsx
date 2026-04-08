@@ -126,11 +126,15 @@ export function MatchCard({ endpoint, onSelect, isSelected }: MatchCardProps) {
         {endpoint.score ? (
           <div className="flex flex-col items-center">
             <span className="bg-surface-overlay rounded-lg px-4 py-1.5 font-mono text-base tabular-nums">
-              <span className={homeWins ? 'text-text-primary font-bold' : 'text-text-muted font-medium'}>
+              <span
+                className={homeWins ? 'text-text-primary font-bold' : 'text-text-muted font-medium'}
+              >
                 {endpoint.score.home}
               </span>
               <span className="text-text-muted mx-1">–</span>
-              <span className={awayWins ? 'text-text-primary font-bold' : 'text-text-muted font-medium'}>
+              <span
+                className={awayWins ? 'text-text-primary font-bold' : 'text-text-muted font-medium'}
+              >
                 {endpoint.score.away}
               </span>
             </span>
@@ -186,8 +190,7 @@ export function MatchCard({ endpoint, onSelect, isSelected }: MatchCardProps) {
               .slice(0, 3)
               .map((s, i) => (
                 <p key={`a-${s.player}-${s.minute}-${i}`} className="truncate text-left">
-                  <span className="font-mono text-[10px]">{s.minute}&apos;</span>{' '}
-                  {s.player}
+                  <span className="font-mono text-[10px]">{s.minute}&apos;</span> {s.player}
                   {s.type === 'penalty' && <span className="ml-0.5 opacity-60">(P)</span>}
                   {s.type === 'own_goal' && <span className="ml-0.5 opacity-60">(OG)</span>}
                 </p>
